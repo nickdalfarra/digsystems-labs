@@ -1,0 +1,47 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\altera\13.0sp1\digsystems-labs\simulation\modelsim
+vAdder2bit
+IUMhc^Q43=WoGHBjOV?>b=3
+VhiP6GzlzfVXlZ8>ZMgBQM1
+Z1 dC:\altera\13.0sp1\digsystems-labs\simulation\modelsim
+w1580952139
+8C:/altera/13.0sp1/digsystems-labs/Adder2bit.v
+FC:/altera/13.0sp1/digsystems-labs/Adder2bit.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@adder2bit
+!i10b 1
+!s100 k0LY:`VLmPN_M6@h_[nzl3
+!s85 0
+!s108 1580952215.666000
+!s107 C:/altera/13.0sp1/digsystems-labs/Adder2bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Adder2bit.v|
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs -O0
+vAdder2bit_tb
+!i10b 1
+!s100 H?z`;Pe5i>;5@`Ma=6jf;1
+I`<Y7i=]@C1;eWN9j[_UiK3
+VVVa8jfg2OPAV@LG:3QGlf3
+R1
+w1580952175
+8C:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v
+FC:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1580952215.869000
+!s107 C:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v|
+!s101 -O0
+R3
+R4
+n@adder2bit_tb
