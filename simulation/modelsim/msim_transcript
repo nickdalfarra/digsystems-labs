@@ -10,24 +10,45 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Adder2bit.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Bus32bit.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Adder2bit
+# -- Compiling module Bus32bit
 # 
 # Top level modules:
-# 	Adder2bit
-# 
-# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v}
+# 	Bus32bit
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Adder2bit_tb
+# -- Compiling module Mux32bit32to1
 # 
 # Top level modules:
-# 	Adder2bit_tb
+# 	Mux32bit32to1
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Mux8bit32to1
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  Adder2bit_tb
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Adder2bit_tb 
-# Loading work.Adder2bit_tb
-# Loading work.Adder2bit
+# Top level modules:
+# 	Mux8bit32to1
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Encoder32to5
+# 
+# Top level modules:
+# 	Encoder32to5
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Bus32bit_tb
+# 
+# Top level modules:
+# 	Bus32bit_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  Bus32bit_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Bus32bit_tb 
+# Loading work.Bus32bit_tb
+# Loading work.Bus32bit
+# Loading work.Encoder32to5
+# Loading work.Mux32bit32to1
+# Loading work.Mux8bit32to1
 # 
 # add wave *
 # view structure
@@ -35,10 +56,10 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 500 ns
-# ** Note: $finish    : C:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v(20)
-#    Time: 500 ps  Iteration: 0  Instance: /Adder2bit_tb
+# ** Note: $finish    : C:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v(93)
+#    Time: 500 ps  Iteration: 0  Instance: /Bus32bit_tb
 # 1
-# Break in Module Adder2bit_tb at C:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v line 20
+# Break in Module Bus32bit_tb at C:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v line 93
 # Simulation Breakpoint: 1
-# Break in Module Adder2bit_tb at C:/altera/13.0sp1/digsystems-labs/Adder2bit_tb.v line 20
-# MACRO ./CPU_run_msim_rtl_verilog.do PAUSED at line 17
+# Break in Module Bus32bit_tb at C:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v line 93
+# MACRO ./CPU_run_msim_rtl_verilog.do PAUSED at line 20
