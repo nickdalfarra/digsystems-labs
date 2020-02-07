@@ -4,7 +4,8 @@ module Cla_32(input [31:0] x, y, input c0, output G, P, c32, output [31:0] s);
    wire g1;
    wire p1;
    wire c16;
-   
+
+   // Send the operands down to the 16-bit adder in 16 bit halves
    Cla_16 cla1(x[15:0], y[15:0], c0, g0, p0, c16, s[15:0]);
    Cla_16 cla2(x[31:16], y[31:16], c16, g1, p1, c32, s[31:16]);
 

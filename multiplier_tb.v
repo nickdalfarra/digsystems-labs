@@ -18,7 +18,7 @@ module multiplier_tb();
    end
    
    always @(posedge clk) begin
-      M <= -2;
-      Q <= 8;
+      M <= 616;
+      Q <= -81;
    end
 endmodule // multiplier_tb

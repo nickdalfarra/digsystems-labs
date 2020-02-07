@@ -11,6 +11,7 @@ module Cla_16(input [15:0] x, y, input c0, output G, P, c16, output [15:0] s);
    wire c8;
    wire c12;
 
+   // Send the operands down to the four 4-bit adders in four 4-bit chunks
    Cla_4 cla1(x[3:0], y[3:0], c0, g0, p0, c4, s[3:0]);
    Cla_4 cla2(x[7:4], y[7:4], c4, g1, p1, c8, s[7:4]);
    Cla_4 cla3(x[11:8], y[11:8], c8, g2, p2, c12, s[11:8]);
