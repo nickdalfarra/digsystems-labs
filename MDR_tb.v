@@ -10,12 +10,11 @@ module MDR_tb();
    wire [31:0] Q;
    reg 	      temp = 0;
 
-   MuxMD md_mux(read, bmi, mdi, D);
-   MDR mdr(clr, clk, mdrin, D, Q);
+   MDR_unit mdr_unit(read, clk, mdrin, clr, bmi, mdi, Q);
    
    initial begin
       $dumpfile("MDR_tb.vcd");
-      $dumpvars(0, mdr, md_mux);
+      $dumpvars(0, mdr_unit);
       forever #10 clk = ~clk;
    end
 
