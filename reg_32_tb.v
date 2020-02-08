@@ -1,4 +1,4 @@
-module tb_top;
+module reg_32_tb();
    
    reg clr = 1'b0;
    reg clk = 1'b0;
