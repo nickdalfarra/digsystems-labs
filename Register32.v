@@ -1,8 +1,8 @@
-module Register (clear, clk, r1in, D, Q);
+module Register32 (clear, clk, Rin, D, Q);
 
    input clear;
    input clk;
-   input r1in;
+   input Rin;
    input [31:0] D;
    output [31:0] Q;
    reg [31:0] 	 register;
@@ -12,7 +12,7 @@ module Register (clear, clk, r1in, D, Q);
 	if (clear == 1)
 	  begin
 	     register = 0;
-	  end else if (r1in == 1)
+	  end else if (Rin == 1)
 	    begin
 	       register = D;
 	    end

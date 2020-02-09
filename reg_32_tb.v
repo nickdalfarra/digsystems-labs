@@ -7,7 +7,7 @@ module reg_32_tb();
    wire [31:0] Q;
    reg [31:0]  temp = 'b1;
 
-   Register r0(clr, clk, r1in, D, Q);
+   Register32 r0(clr, clk, r1in, D, Q);
    
    initial begin
       $dumpfile("reg_32_tb.vcd");
