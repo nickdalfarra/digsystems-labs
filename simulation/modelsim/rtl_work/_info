@@ -3,108 +3,45 @@ K3
 13
 cModel Technology
 Z0 dC:\altera\13.0sp1\digsystems-labs\simulation\modelsim
-vBus32bit
-IXGAg5]Y;JJLDnMAbCL;fM2
-V]==[Jzll`790@2a2RGEf_3
+vDivider32bit
+Iz[GleZ4d`[]lWG`9beFMM1
+V]NhGb5P=1maVn=I_^K`FS3
 Z1 dC:\altera\13.0sp1\digsystems-labs\simulation\modelsim
-w1580938486
-8C:/altera/13.0sp1/digsystems-labs/Bus32bit.v
-FC:/altera/13.0sp1/digsystems-labs/Bus32bit.v
+w1581303996
+8C:/altera/13.0sp1/digsystems-labs/Divider32bit.v
+FC:/altera/13.0sp1/digsystems-labs/Divider32bit.v
 L0 1
 Z2 OV;L;10.1d;51
 r1
 31
 Z3 o-vlog01compat -work work -O0
-n@bus32bit
+n@divider32bit
+!i10b 1
+!s100 @5H_T9^jFf835_kSzJXch3
+!s85 0
+!s108 1581341876.335000
+!s107 C:/altera/13.0sp1/digsystems-labs/Divider32bit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Divider32bit.v|
+!s101 -O0
 Z4 !s92 -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs -O0
+vDivider32bit_tb
 !i10b 1
-!s100 SFYNKL`[?6nUhN@lmiU0S2
-!s85 0
-!s108 1580955569.438000
-!s107 C:/altera/13.0sp1/digsystems-labs/Bus32bit.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Bus32bit.v|
-!s101 -O0
-vBus32bit_tb
-!i10b 1
-!s100 NzbON;IIVHW2^5=c0c[ML3
-IM?:FI[4oK^IUj3BeW;Yoa1
-V9<7PjHMl=69H;K6mBTQ]C0
+!s100 [QRGdgDVAX=aamhfC>Hg]2
+I4?03=8m4bC1mZ0DWh`;nN2
+VS2?jNIG4TePE5JEd`mMHa0
 R1
-w1580955251
-8C:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v
-FC:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v
+w1581304043
+8C:/altera/13.0sp1/digsystems-labs/Divider32bit_tb.v
+FC:/altera/13.0sp1/digsystems-labs/Divider32bit_tb.v
 L0 1
 R2
 r1
 !s85 0
 31
-!s108 1580955570.174000
-!s107 C:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Bus32bit_tb.v|
+!s108 1581341876.628000
+!s107 C:/altera/13.0sp1/digsystems-labs/Divider32bit_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Divider32bit_tb.v|
 !s101 -O0
 R3
 R4
-n@bus32bit_tb
-vEncoder32to5
-I4IQ@g3V`<8SRo58HA2j;z3
-VcVZS8eYUg4QG:R:1Yzell2
-R1
-w1580933397
-8C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v
-FC:/altera/13.0sp1/digsystems-labs/Encoder32to5.v
-L0 1
-R2
-r1
-31
-R3
-R4
-n@encoder32to5
-!i10b 1
-!s100 APU[Eib67GJLYAQ;4dCod0
-!s85 0
-!s108 1580955570.021000
-!s107 C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v|
-!s101 -O0
-vMux32bit32to1
-I_ak:PLocTB]XeR@7UX[7I1
-V6:W;mQXdc5KQ7T4mNBKP73
-R1
-w1580939962
-8C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v
-FC:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v
-L0 1
-R2
-r1
-31
-R3
-R4
-n@mux32bit32to1
-!i10b 1
-!s100 kXKbiz?MkSV;0nl9`^@RF0
-!s85 0
-!s108 1580955569.585000
-!s107 C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v|
-!s101 -O0
-vMux8bit32to1
-IZBD[1g>of@>3A:8>j8Vaj2
-VZbcWg=:IdhdROU<@D[<:V1
-R1
-w1580746582
-8C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v
-FC:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v
-L0 1
-R2
-r1
-31
-R3
-R4
-n@mux8bit32to1
-!i10b 1
-!s100 4G5C61L`JazzhELgEcl4@0
-!s85 0
-!s108 1580955569.755000
-!s107 C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v|
-!s101 -O0
+n@divider32bit_tb
