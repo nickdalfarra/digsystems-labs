@@ -1,4 +1,4 @@
-module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, input clear, clk, read, R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, input [31:0] Mdatain);
+module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, input clear, clk, read, R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain);
 
    // Wires for outputs of registers to bus
    wire [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR;
@@ -49,7 +49,7 @@ module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8
 
    Bus32bit bus (.i0out(R0out), .i1out(R1out), .i2out(R2out), .i3out(R3out), .i4out(R4out), .i5out(R5out), .i6out(R6out), .i7out(R7out), .i8out(R8out), .i9out(R9out), .i10out(R10out), .i11out(R11out), .i12out(R12out), .i13out(R13out), .i14out(R14out), .i15out(R15out), .i16out(HIout), .i17out(LOout), .i18out(Zhighout), .i19out(Zlowout), .i20out(PCout), .i21out(MDRout), .i22out(), .i23out(), .i24out(), .i25out(), .i26out(), .i27out(), .i28out(), .i29out(), .i30out(), .i31out(), .i0(R0), .i1(R1), .i2(R2), .i3(R3), .i4(R4), .i5(R5), .i6(R6), .i7(R7), .i8(R8), .i9(R9), .i10(R10), .i11(R11), .i12(R12), .i13(R13), .i14(R14), .i15(R15), .i16(Hi), .i17(Lo), .i18(Z[63:32]), .i19(Z[31:0]), .i20(PC), .i21(MDR), .i22(), .i23(), .i24(), .i25(), .i26(), .i27(), .i28(), .i29(), .i30(), .i31(), .busmux_out(bus_mux_out));
 
-   Alu alu (clk, AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, Yout, bus_mux_out, ALUout);
+   Alu alu (clk, AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, Yout, bus_mux_out, ALUout);
    
  
 endmodule // Datapath

@@ -1,4 +1,4 @@
-module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, input [31:0] A, B, output [63:0] C);
+module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] A, B, output [63:0] C);
 
    // Different wires to hold outputs of units
    wire [63:0] C_mult;
@@ -61,6 +61,9 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
 	end
 	else if (NOT == 1) begin
 	   ALU_result = {32'b0, ~B};
+	end
+	else if (IncPC == 1) begin
+	   ALU_result = {32'b0, B + 32'h00000004};
 	end
      end
    
