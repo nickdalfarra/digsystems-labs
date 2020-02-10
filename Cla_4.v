@@ -18,7 +18,9 @@ module Cla_4(input [3:0] x, y, input c0, output G, P, c4, output [3:0] s);
    Bit_stage bit_stage4(x[3], y[3], c3, g3, p3, s[3]);
 
    // Just the equations for the CLA logic from course reader
-   and(P, p0, p1, p2, p3);  
+   //and(P, p0, p1, p2, p3);  
+	
+	assign P = p0 & p1 & p2 & p3;
    assign G = g3 | (p3 & g2) | (p3 & p2 & g1) | (p3 & p2 & p1 & g0);
    assign c1 = g0 | (p0 & c0);
    assign c2 = g1 | (p1 & g0) | (p1 & p0 & c0);

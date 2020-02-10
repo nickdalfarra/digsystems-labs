@@ -16,10 +16,10 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
    reg [31:0]  neg_B;
    
    reg [63:0] ALU_result;
-
+	
    Multiplier mult(A, B, C_mult);
    Cla_32 adder(A, B, 1'b0, G, P, c32, C_add);
-   Cla_32 subtractor(A, neg_B, 1'b1, G, P, c32, C_sub);
+   Cla_32 subtractor(A, neg_B, 1'b0, G, P, c32, C_sub);
 	      
    assign C = ALU_result;
 
@@ -35,7 +35,7 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
 	   ALU_result = (C_add[31] == 1'b0)? {32'b0, C_add} : {32'hFFFFFFFF, C_add};
 	end
 	else if (SUB == 1) begin
-	   neg_B = ~B;
+	   neg_B = ~B + 1;
 	   ALU_result = (C_sub[31] == 1'b0)? {32'b0, C_sub} : {32'hFFFFFFFF, C_sub};
 	end
 	else if (MUL == 1) begin
