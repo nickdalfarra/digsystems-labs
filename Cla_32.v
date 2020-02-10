@@ -11,6 +11,5 @@ module Cla_32(input [31:0] x, y, input c0, output G, P, c32, output [31:0] s);
 
    assign P = p0 & p1;
    assign G = g1 | (p1 & g0);
-   assign c16 = g0 | (p0 & c0);
-   assign c32 = g1 | (p1 & g0) | (p1 & p0 & c0);
+
 endmodule
