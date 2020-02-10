@@ -1,5 +1,7 @@
-module Bit_stage (input x, y, c, output G, output P, output s);	
-   and(G, x, y);
-   xor(P, x, y);
-   xor(s, P, c);	 
+module Bit_stage (input x, y, c0, output G, P, s);	
+
+	assign G = x & y;
+	assign P = x ^ y;
+	assign s = P ^ c0;
+
 endmodule

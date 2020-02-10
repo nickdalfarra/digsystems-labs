@@ -21,7 +21,7 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
    Cla_32 adder(A, B, 1'b0, G, P, c32, C_add);
    Cla_32 subtractor(A, neg_B, 1'b0, G, P, c32, C_sub);
    //Divider32bit divider
-   
+
 	      
    assign C = ALU_result;
 

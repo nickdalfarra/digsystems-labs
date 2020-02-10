@@ -1,4 +1,4 @@
-module alu_tb();
+module alu_tb;
    reg clk = 1'b0;
    reg AND = 1'b0;
    reg OR = 1'b0;

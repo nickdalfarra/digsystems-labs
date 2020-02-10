@@ -19,10 +19,6 @@ module Cla_16(input [15:0] x, y, input c0, output G, P, c16, output [15:0] s);
 
    assign P = p0 & p1 & p2 & p3;
    assign G = g3 | (p3 & g2) | (p3 & p2 & g1) | (p3 & p2 & p1 & g0);
-   assign c4 = g0 | (p0 & c0);
-   assign c8 = g1 | (p1 & g0) | (p1 & p0 & c0);
-   assign c12 = g2 | (p2 & g1) | (p2 & p1 & g0) | (p2 & p1 & p0 & c0);
-   assign c16 = g3 | (p3 & g2) | (p3 & p2 & g1) | (p3 & p2 & p1 & g0) | (p3 & p2 & p1 & p0 & c0);
 
 endmodule // Cla_16
 
