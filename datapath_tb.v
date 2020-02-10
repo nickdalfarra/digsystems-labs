@@ -66,39 +66,39 @@ module datapath_tb();
 	   Mdatain <= 32'h00000022;
 	   Read = 0;
 	   MDRin = 0;
-	   #5 Read <= 1; MDRin <= 1;
+	   #10 Read <= 1; MDRin <= 1;
 	   #10 Read <= 0; MDRin <= 0;
 	end
 	Reg_load1b: begin
 	   $display("in 1b");
 	   
-	   #5 MDRout <= 1; R2in <= 1;
+	   #10 MDRout <= 1; R2in <= 1;
 	   #10 MDRout <= 0; R2in <= 0;
 	end
 	Reg_load2a: begin
 	   $display("in 2a");
 	   
 	   Mdatain <= 32'h00000024;
-	   #5 Read <= 1; MDRin <= 1;
+	   #10 Read <= 1; MDRin <= 1;
 	   #10 Read <= 0; MDRin <= 0;
 	end
 	Reg_load2b: begin
 	   $display("in 2b");
 	   
-	   #5 MDRout <= 1; R4in <= 1;
+	   #10 MDRout <= 1; R4in <= 1;
 	   #10 MDRout <= 0; R4in <= 0;
 	end
 	Reg_load3a: begin
 	   $display("in 3a");
 	   
 	   Mdatain <= 32'h00000026;
-	   #5 Read <= 1; MDRin <= 1;
+	   #10 Read <= 1; MDRin <= 1;
 	   #10 Read <= 0; MDRin <= 0;
 	end
 	Reg_load3b: begin
 	   $display("in 3b");
 	   
-	   #5 MDRout <= 1; R5in <= 1;
+	   #10 MDRout <= 1; R5in <= 1;
 	   #10 MDRout <= 0; R5in <= 0;
 	end
 	T0: begin
@@ -125,14 +125,14 @@ module datapath_tb();
 	end
 	T3: begin
 	   $display("in T3");
-	   R2out <= 1;
-	   Yin <= 1;
+	   #10 R2out <= 1; Yin <= 1;
+	   #10 R2out <= 0; Yin <= 0;
 	end
 	T4: begin
 	   $display("in T4");
-	   R4out <= 1;
-	   AND <= 1;
-	   Zin <= 1;
+	   #10 R4out <= 1; AND <= 1; Zin <= 1;
+	   #10 Zin <= 0;
+	   
 	end
 	T5: begin
 	   $display("in T5");
