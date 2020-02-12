@@ -67,9 +67,6 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
 	else if (IncPC == 1) begin
 	   ALU_result = {32'b0, B + 32'h00000004};
 	end
-	else
-	  ALU_result = 64'bxxxxxxxxxxxxxxxx;
-	
      end
    
 endmodule
