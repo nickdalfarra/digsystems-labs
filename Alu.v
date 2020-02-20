@@ -20,7 +20,7 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
       
    reg [63:0]  ALU_result;
 
-   Multiplier mult(A, B, C_mult);
+   Multiplier mult(A, B, MUL, C_mult);
    Cla_32 adder(A, B, 1'b0, G, P, c32, C_add);
    Cla_32 subtractor(A,~B, 1'b1, G, P, c32, C_sub);
    Divider32bit divider(A, B, C_div, diverror);
@@ -42,6 +42,7 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
 	   ALU_result <= (C_sub[31] == 1'b0)? {32'b0, C_sub} : {32'hFFFFFFFF, C_sub};
 	end
 	else if (MUL == 1) begin
+	   #180
 	   ALU_result = C_mult;
 	end
 	else if (DIV == 1) begin

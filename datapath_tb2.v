@@ -20,7 +20,7 @@ module datapath_tb2();
    end
 
    initial begin
-      #500 $finish;
+      #1000 $finish;
    end 
 
    always @(posedge Clock) begin
@@ -37,7 +37,8 @@ module datapath_tb2();
 	T2 : Present_state = T3;
 	T3 : Present_state = T4;
 	T4 : Present_state = T5;
-	T5 : Present_state = T6;
+	// Add delay to wait for multiplier result
+	T5 : #200 Present_state = T6;
       endcase // case (Present_state)      
    end // always @ (posedge Clock)
 
@@ -122,13 +123,13 @@ module datapath_tb2();
 	   #10 R2out <= 0; Yin <= 0; 
 	end
 	T4: begin
-	   IncPC <= 0;
+	   IncPC <= 0; R4out <= 1;
 	   #10 
-		DIV <= 1; Zin <= 1;
-		R4out <= 1; 
+	   DIV <= 1; Zin <= 1; 
 	end
 	T5: begin
-		#10 
+	   // Big delay to wait for multiplier
+		#200 
 		DIV <= 0;	   
 	   #10 R4out <= 0;
 	   Zlowout <= 1; LOin <= 1;
