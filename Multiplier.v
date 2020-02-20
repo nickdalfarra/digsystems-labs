@@ -1,4 +1,4 @@
-module Multiplier(input [31:0] M, Q, output [63:0] P);
+module Multiplier(input [31:0] M, Q,  output [63:0] P);
    // Used to hold current bits of Q being encoded
    // Honestly not rlly sure if we need both but it won't let me use a wire in the always block so I think I need the reg
    reg [2:0] bits_r;
@@ -24,7 +24,6 @@ module Multiplier(input [31:0] M, Q, output [63:0] P);
    Booth_encoder booth_enc(bits_w, M1, current_M_w); 
 
    always @(M or Q) begin
-      
       M1 = M;
       Q1 = Q;
 

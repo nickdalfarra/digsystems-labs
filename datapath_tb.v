@@ -1,14 +1,16 @@
 module datapath_tb();
    reg PCout, Zlowout, MDRout, R2out, R4out;
    reg MARin, Zin, PCin, MDRin, IRin, Yin;
-   reg IncPC, Read, ADD, R5in, R2in, R4in;
+   reg IncPC, Read, ADD, AND, OR, SUB, R5in, R2in, R4in;
    reg Clock;
    reg [31:0] Mdatain;
+	wire [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR;
+	wire [63:0] Z, ALUout;
 
    parameter Default = 4'b0000, Reg_load1a = 4'b0001, Reg_load1b = 4'b0010, Reg_load2a = 4'b0011, Reg_load2b = 4'b0100, Reg_load3a = 4'b0101, Reg_load3b = 4'b0110, T0 = 4'b0111, T1 = 4'b1000, T2 = 4'b1001, T3 = 4'b1010, T4 = 4'b1011, T5 = 4'b1100;
    reg [3:0]  Present_state = Default;
 
-   Datapath DUT(.PCout(PCout), .Zlowout(Zlowout), .MDRout(MDRout), .R2out(R2out), .R4out(R4out), .MARin(MARin), .Zin(Zin), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .Yin(Yin), .IncPC(IncPC), .read(Read), .ADD(ADD), .R5in(R5in), .R2in(R2in), .R4in(R4in), .clk(Clock), .Mdatain(Mdatain));
+   Datapath DUT(.PCout(PCout), .Zlowout(Zlowout), .MDRout(MDRout), .R2out(R2out), .R4out(R4out), .MARin(MARin), .Zin(Zin), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .Yin(Yin), .IncPC(IncPC), .read(Read), .ADD(ADD), .R5in(R5in), .R2in(R2in), .R4in(R4in), .clk(Clock), .Mdatain(Mdatain), .R0(R0), .R1(R1), .R2(R2), .R3(R3), .R4(R4), .R5(R5), .R6(R6), .R7(R7), .R8(R8), .R9(R9), .R10(R10), .R11(R11), .R12(R12), .R13(R13), .R14(R14), .R15(R15), .Hi(Hi), .Lo(Lo), .MDR(MDR), .IR(IR),.Z(Z), .AND(AND), .OR(OR), .SUB(SUB), .bus_mux_out(bus_mux_out), .ALUout(ALUout));
 
    initial begin
       Clock = 0;
@@ -17,9 +19,9 @@ module datapath_tb();
       forever #10 Clock = ~Clock;
    end
 
-   initial begin
+   /*initial begin
       #500 $finish;
-   end
+   end */
 
    always @(posedge Clock) begin
       case (Present_state)
@@ -54,7 +56,10 @@ module datapath_tb();
 	   Yin <= 0;
 	   IncPC <= 0;
 	   Read <= 0;
-	   ADD <= 0;
+	   AND <= 0; 
+		OR <= 0;
+		SUB <= 0;
+		ADD <= 0;
 	   R5in <= 0;
 	   R2in <= 0;
 	   R4in <= 0;
@@ -62,8 +67,6 @@ module datapath_tb();
 	end // case: Default
 	Reg_load1a: begin
 	   Mdatain <= 32'h00000022;
-	   Read = 0;
-	   MDRin = 0;
 	   #10 Read <= 1; MDRin <= 1;
 	   #10 Read <= 0; MDRin <= 0;
 	end
@@ -97,18 +100,22 @@ module datapath_tb();
 	   
 	end
 	T1: begin  
-	   Zlowout <= 1;
+		PCout <= 0; Zin <= 0; MARin <= 0;
+	   #10 Zlowout <= 1;
 	   PCin <= 1;
 	   Read <= 1;
 	   MDRin <= 1;
 	   Mdatain <= 32'h4A920000;
+		#10 Zlowout <= 0; PCin <= 0;
 	   
 	end
 	T2: begin
 	   MDRout <= 1;
 	   IRin <= 1;
+		
 	end
 	T3: begin
+		MDRout <= 0; IRin <= 0;
 	   #10 R2out <= 1; Yin <= 1;
 	   #10 R2out <= 0; Yin <= 0;
 	end

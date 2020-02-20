@@ -4,7 +4,7 @@ module alu_tb;
    reg OR = 1'b0;
    reg ADD = 1'b0;
    reg SUB = 1'b0;
-   reg MUL = 1'b0;
+   reg MUL = 1'b1;
    reg DIV = 1'b0;
    reg SHR = 1'b0;
    reg SHL = 1'b0;
@@ -27,11 +27,11 @@ module alu_tb;
 
    initial begin
       #500 $finish;
-   end
+   end 
    
    always @(posedge clk) begin
-      A <= 3;
-      B <= 4;
+      A <= 22;
+      B <= 24;
    end
    
 endmodule // alu_tb

@@ -6,6 +6,9 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
    wire [31:0] C_sub;
    wire [63:0] C_div;
 
+   wire        diverror;
+   
+
    // Wires to hold G, P, and C_32 from addition op
    // Not ever used? may get rid of them from 32-bit adder
    wire        G;
@@ -19,10 +22,9 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
 
    Multiplier mult(A, B, C_mult);
    Cla_32 adder(A, B, 1'b0, G, P, c32, C_add);
-   Cla_32 subtractor(A, neg_B, 1'b0, G, P, c32, C_sub);
-   //Divider32bit divider
-
-	      
+   Cla_32 subtractor(A,~B, 1'b1, G, P, c32, C_sub);
+   Divider32bit divider(A, B, C_div, diverror);
+     
    assign C = ALU_result;
 
    always @(posedge clk)
@@ -37,14 +39,13 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
 	   ALU_result = (C_add[31] == 1'b0)? {32'b0, C_add} : {32'hFFFFFFFF, C_add};
 	end
 	else if (SUB == 1) begin
-	   neg_B = ~B + 1;
-	   ALU_result = (C_sub[31] == 1'b0)? {32'b0, C_sub} : {32'hFFFFFFFF, C_sub};
+	   ALU_result <= (C_sub[31] == 1'b0)? {32'b0, C_sub} : {32'hFFFFFFFF, C_sub};
 	end
 	else if (MUL == 1) begin
 	   ALU_result = C_mult;
 	end
 	else if (DIV == 1) begin
-
+	   ALU_result = C_div;
 	end
 	else if (SHR == 1) begin
 	   ALU_result = {32'b0, A >> B};
