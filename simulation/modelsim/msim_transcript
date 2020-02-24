@@ -76,10 +76,10 @@
 # 
 #           File in use by: nickdf4  Hostname: NICKDF1-PC  ProcessID: 16180
 # 
-#           Attempting to use alternate WLF file "./wlftcm0q5i".
+#           Attempting to use alternate WLF file "./wlftfie53j".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftcm0q5i
+#           Using alternate file: ./wlftfie53j
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
