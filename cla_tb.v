@@ -23,7 +23,7 @@ module cla_tb();
    
    always @(posedge clk) begin
       x <= 32'b1;
-      y <= 32'hFFFFFFFF;
+      y <= 32'hFFFFFFFE;
       c_in <= 0; 
    end
    

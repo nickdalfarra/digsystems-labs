@@ -6,7 +6,7 @@ module alu_tb;
    reg SUB = 1'b0;
    reg MUL = 1'b0;
    reg DIV = 1'b0;
-   reg SHR = 1'b0;
+   reg SHR = 1'b1;
    reg SHL = 1'b0;
    reg ROR = 1'b0;
    reg ROL = 1'b0;
@@ -30,10 +30,10 @@ module alu_tb;
    end 
    
    always @(posedge clk) begin
-      A <= 22;
-      B <= 24;
-      MUL <= 1'b1;
-      
+
+      A <= 4;
+      B <= 1;
+
    end
    
 endmodule // alu_tb
