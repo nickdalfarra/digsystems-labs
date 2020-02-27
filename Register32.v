@@ -18,6 +18,6 @@ module Register32 (clear, clk, Rin, D, Q);
 	    end
      end
    
-   assign Q[31:0] = register[31:0];
+   assign Q = register;
    
 endmodule 

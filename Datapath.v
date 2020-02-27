@@ -1,10 +1,10 @@
-module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, input clear, clk, read, R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, output [63:0] Z, ALUout);
+module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, input clear, clk, read, R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, MAR, output [63:0] Z, ALUout);
 
    // Wires for outputs of registers to bus
    //wire [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR;
 
    // Wires from registers to control unit (not used yet)
-   wire [31:0] MAR;
+   //wire [31:0] MAR;
 
    // Wire for bus output
    //wire [31:0] bus_mux_out;
@@ -16,7 +16,7 @@ module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8
    //wire [63:0] Z, ALUout;
 
    // General registers
-   Register32 r0 (clear, clk, R0in, bus_mux_out, R0);
+   R0 r0 (clear, clk, R0in, BAout, bus_mux_out, R0);
    Register32 r1 (clear, clk, R1in, bus_mux_out, R1);
    Register32 r2 (clear, clk, R2in, bus_mux_out, R2);
    Register32 r3 (clear, clk, R3in, bus_mux_out, R3);

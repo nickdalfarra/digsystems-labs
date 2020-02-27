@@ -1,3 +1,4 @@
+/* This testbench is used for both the MUL and DIV instruction. Just change the signal being asserted on Line 129. */
 module datapath_tb2();
    reg PCout, Zlowout, Zhighout, MDRout, R2out, R4out;
    reg MARin, Zin, PCin, MDRin, IRin, Yin, HIin, LOin;
@@ -19,9 +20,9 @@ module datapath_tb2();
       forever #10 Clock = ~Clock;
    end
 
-   initial begin
-      #1000 $finish;
-   end 
+   /*initial begin
+      #500 $finish;
+   end */
 
    always @(posedge Clock) begin
       case (Present_state)
@@ -69,7 +70,7 @@ module datapath_tb2();
 	   Mdatain <= 32'h00000000;
 	end // case: Default
 	Reg_load1a: begin
-	   Mdatain <= 22;
+	   Mdatain <= 4;
 	   #10 Read <= 1; MDRin <= 1;
 	   #10 Read <= 0; MDRin <= 0;
 	end
@@ -78,7 +79,7 @@ module datapath_tb2();
 	   #10 MDRout <= 0; R2in <= 0;
 	end
 	Reg_load2a: begin
-	   Mdatain <= 24;
+	   Mdatain <= 2;
 	   #10 Read <= 1; MDRin <= 1;
 	   #10 Read <= 0; MDRin <= 0;
 	end
