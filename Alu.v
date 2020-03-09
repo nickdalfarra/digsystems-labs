@@ -39,7 +39,7 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
 	   ALU_result = (C_add[31] == 1'b0)? {32'b0, C_add} : {32'hFFFFFFFF, C_add};
 	end
 	else if (SUB == 1) begin
-	   ALU_result <= (C_sub[31] == 1'b0)? {32'b0, C_sub} : {32'hFFFFFFFF, C_sub};
+	   ALU_result = (C_sub[31] == 1'b0)? {32'b0, C_sub} : {32'hFFFFFFFF, C_sub};
 	end
 	else if (MUL == 1) begin
 	   #180
