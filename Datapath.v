@@ -1,4 +1,4 @@
-module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, input clear, clk, read, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, MAR, C_sign_ext, output [63:0] Z, ALUout, output [15:0] Rins, Routs);
+module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, input clear, clk, read, R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, MAR, output [63:0] Z, ALUout);
 
    // Wires for outputs of registers to bus
    //wire [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR;
@@ -16,22 +16,22 @@ module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAou
    //wire [63:0] Z, ALUout;
 
    // General registers
-   R0 r0 (clear, clk, Rins[0], BAout, bus_mux_out, R0);
-   Register32 r1 (clear, clk, Rins[1], bus_mux_out, R1);
-   Register32 r2 (clear, clk, Rins[2], bus_mux_out, R2);
-   Register32 r3 (clear, clk, Rins[3], bus_mux_out, R3);
-   Register32 r4 (clear, clk, Rins[4], bus_mux_out, R4);
-   Register32 r5 (clear, clk, Rins[5], bus_mux_out, R5);
-   Register32 r6 (clear, clk, Rins[6], bus_mux_out, R6);
-   Register32 r7 (clear, clk, Rins[7], bus_mux_out, R7);
-   Register32 r8 (clear, clk, Rins[8], bus_mux_out, R8);
-   Register32 r9 (clear, clk, Rins[9], bus_mux_out, R9);
-   Register32 r10 (clear, clk, Rins[10], bus_mux_out, R10);
-   Register32 r11 (clear, clk, Rins[11], bus_mux_out, R11);
-   Register32 r12 (clear, clk, Rins[12], bus_mux_out, R12);
-   Register32 r13 (clear, clk, Rins[13], bus_mux_out, R13);
-   Register32 r14 (clear, clk, Rins[14], bus_mux_out, R14);
-   Register32 r15 (clear, clk, Rins[15], bus_mux_out, R15);
+   R0 r0 (clear, clk, R0in, BAout, bus_mux_out, R0);
+   Register32 r1 (clear, clk, R1in, bus_mux_out, R1);
+   Register32 r2 (clear, clk, R2in, bus_mux_out, R2);
+   Register32 r3 (clear, clk, R3in, bus_mux_out, R3);
+   Register32 r4 (clear, clk, R4in, bus_mux_out, R4);
+   Register32 r5 (clear, clk, R5in, bus_mux_out, R5);
+   Register32 r6 (clear, clk, R6in, bus_mux_out, R6);
+   Register32 r7 (clear, clk, R7in, bus_mux_out, R7);
+   Register32 r8 (clear, clk, R8in, bus_mux_out, R8);
+   Register32 r9 (clear, clk, R9in, bus_mux_out, R9);
+   Register32 r10 (clear, clk, R10in, bus_mux_out, R10);
+   Register32 r11 (clear, clk, R11in, bus_mux_out, R11);
+   Register32 r12 (clear, clk, R12in, bus_mux_out, R12);
+   Register32 r13 (clear, clk, R13in, bus_mux_out, R13);
+   Register32 r14 (clear, clk, R14in, bus_mux_out, R14);
+   Register32 r15 (clear, clk, R15in, bus_mux_out, R15);
 
    // Cool important registers
    Register32 pc (clear, clk, PCin, bus_mux_out, PC);
@@ -47,12 +47,9 @@ module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAou
    // MDR Unit
    MDR_unit mdr (read, clk, MDRin, clear, bus_mux_out, Mdatain, MDR);   
 
-   Bus32bit bus (.i0out(Routs[0]), .i1out(Routs[1]), .i2out(Routs[2]), .i3out(Routs[3]), .i4out(Routs[4]), .i5out(Routs[5]), .i6out(Routs[6]), .i7out(Routs[7]), .i8out(Routs[8]), .i9out(Routs[9]), .i10out(Routs[10]), .i11out(Routs[11]), .i12out(Routs[12]), .i13out(Routs[13]), .i14out(Routs[14]), .i15out(Routs[15]), .i16out(HIout), .i17out(LOout), .i18out(Zhighout), .i19out(Zlowout), .i20out(PCout), .i21out(MDRout), .i22out(), .i23out(Cout), .i24out(), .i25out(), .i26out(), .i27out(), .i28out(), .i29out(), .i30out(), .i31out(), .i0(R0), .i1(R1), .i2(R2), .i3(R3), .i4(R4), .i5(R5), .i6(R6), .i7(R7), .i8(R8), .i9(R9), .i10(R10), .i11(R11), .i12(R12), .i13(R13), .i14(R14), .i15(R15), .i16(Hi), .i17(Lo), .i18(Z[63:32]), .i19(Z[31:0]), .i20(PC), .i21(MDR), .i22(), .i23(C_sign_ext), .i24(), .i25(), .i26(), .i27(), .i28(), .i29(), .i30(), .i31(), .busmux_out(bus_mux_out));
+   Bus32bit bus (.i0out(R0out), .i1out(R1out), .i2out(R2out), .i3out(R3out), .i4out(R4out), .i5out(R5out), .i6out(R6out), .i7out(R7out), .i8out(R8out), .i9out(R9out), .i10out(R10out), .i11out(R11out), .i12out(R12out), .i13out(R13out), .i14out(R14out), .i15out(R15out), .i16out(HIout), .i17out(LOout), .i18out(Zhighout), .i19out(Zlowout), .i20out(PCout), .i21out(MDRout), .i22out(), .i23out(), .i24out(), .i25out(), .i26out(), .i27out(), .i28out(), .i29out(), .i30out(), .i31out(), .i0(R0), .i1(R1), .i2(R2), .i3(R3), .i4(R4), .i5(R5), .i6(R6), .i7(R7), .i8(R8), .i9(R9), .i10(R10), .i11(R11), .i12(R12), .i13(R13), .i14(R14), .i15(R15), .i16(Hi), .i17(Lo), .i18(Z[63:32]), .i19(Z[31:0]), .i20(PC), .i21(MDR), .i22(), .i23(), .i24(), .i25(), .i26(), .i27(), .i28(), .i29(), .i30(), .i31(), .busmux_out(bus_mux_out));
 
    Alu alu (clk, AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, Yout, bus_mux_out, ALUout);
-
-   Sel_Enc sel_enc(Gra, Grb, Grc, Rin, Rout, BAout, IR, Rins, Routs, C_sign_ext);
-   
    
  
 endmodule // Datapath
