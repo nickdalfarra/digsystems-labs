@@ -16,7 +16,7 @@ module RAM_tb();
 	
 	always @(posedge clk) begin
 	
-	
+	 
 		re = 1; we = 0; #10;
 		addr = addr + 1; #10;
 		addr = addr + 1; #10;
