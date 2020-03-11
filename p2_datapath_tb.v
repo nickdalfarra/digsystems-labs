@@ -37,7 +37,7 @@ module p2_datapath_tb();
 	//Reg_load3a : Present_state = Reg_load3b;
 	//Reg_load3b : Present_state = T0;
 	T0 : Present_state = T1;
-	T1 : Present_state = T2;
+	T1 : #20 Present_state = T2;
 	T2 : Present_state = T3;
 	T3 : Present_state = T4;
 	T4 : Present_state = T5;
@@ -112,8 +112,7 @@ module p2_datapath_tb();
 	   PCout <= 0; MARin <= 0;
 	   IncPC <= 0;
 	   
-	   #20
-	     Zin <= 0;
+	   #20 Zin <= 0;
 	   
 	   Zlowout <= 1;
 	   PCin <= 1; Read <= 1; Mdatain <= 32'h01000085;
