@@ -1,8 +1,8 @@
 
 module p2_datapath_tb();
    reg PCout, Zlowout, MDRout, Cout;
-;
-   reg MARin, Zin, PCin, MDRin, IRin, Yin, Gra, Grb, Grc, Rin, Rout;
+
+   reg MARin, Zin, PCin, MDRin, IRin, Yin, Gra, Grb, Grc, Rin, Rout, BAout;
    reg IncPC, Read, ADD, AND, OR, SUB, SHR, SHL, ROL, ROR, NEG, NOT;
    reg Clock;
    reg [31:0] Mdatain;
@@ -31,18 +31,19 @@ module p2_datapath_tb();
       case (Present_state)
 	Default : Present_state = Reg_load1a;
 	Reg_load1a : Present_state = Reg_load1b;
-	Reg_load1b : Present_state = Reg_load2a;
-	Reg_load2a : Present_state = Reg_load2b;
-	Reg_load2b : Present_state = Reg_load3a;
-	Reg_load3a : Present_state = Reg_load3b;
-	Reg_load3b : Present_state = T0;
+	Reg_load1b : Present_state = T0;
+	//Reg_load2a : Present_state = Reg_load2b;
+	//Reg_load2b : Present_state = Reg_load3a;
+	//Reg_load3a : Present_state = Reg_load3b;
+	//Reg_load3b : Present_state = T0;
 	T0 : Present_state = T1;
 	T1 : Present_state = T2;
 	T2 : Present_state = T3;
 	T3 : Present_state = T4;
 	T4 : Present_state = T5;
 	T5: Present_state = T6;
-	T7 : Present_state = T8;
+        T6 : Present_state = T7;
+	
 	
       endcase // case (Present_state)      
    end // always @ (posedge Clock)
@@ -93,7 +94,7 @@ module p2_datapath_tb();
 	   
 	end
 	
-	// Get PC in MAR, get PC+4 in Z
+	// Get PC in MAR to go to mem and get next instr, get PC+4 in Z
 	T0: begin
 	   MDRout <= 0;
 	   PCin <= 0;
@@ -102,11 +103,15 @@ module p2_datapath_tb();
 	   MARin <= 1;
 	   IncPC <= 1;
 	   Zin <= 1;
+	   
 	end
 	// Put PC+4 in PC, load instr (ld R1, 85) from memory into MDR
 	T1: begin
-	   PCout <= 0; MARin <= 0; Zin <= 0;
+	   PCout <= 0; MARin <= 0;
 	   IncPC <= 0;
+	   
+	   #5
+	     Zin <= 0;
 	   
 	   Zlowout <= 1;
 	   PCin <= 1; Read <= 1; Mdatain <= 32'h01000085;
@@ -131,7 +136,7 @@ module p2_datapath_tb();
 	   Yin <= 1;
 	   
 	end
-	// Put C_sign_ext in Z
+	// Put C_sign_ext = 85 in Z
 	T4: begin
 	   Cout <= 1;
 	   ADD <= 1;
@@ -142,7 +147,7 @@ module p2_datapath_tb();
 	   
 	   
 	end
-	// Put C_sign_ext in MAR
+	// Put C_sign_ext = 85 in MAR
 	T5: begin
 	   Cout <= 0;
 	   ADD <= 0;
@@ -151,16 +156,16 @@ module p2_datapath_tb();
 	   MARin <= 1;
 	   
 	end
-	// Instr (ld R0, 35(R1)) into MDR
+	// Read data from 85 in RAM into MDR (pretend it's 2)
 	T6: begin  
 	   Read <= 1;
-	   Mdatain <= 32'h00100035;
+	   Mdatain <= 32'h00000002;
 	   MDRin <= 1;
 	   Zlowout <= 0;
 	   MARin <= 0;
 	   
 	end
-	// Select R0 as Ra, 
+	// Select R1 as Ra, put data from mem loc in R1 ('h2) 
 	T7: begin  
 	   MDRout <= 1;
 	   Gra <= 1;

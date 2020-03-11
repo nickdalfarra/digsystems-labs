@@ -1,4 +1,4 @@
-module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8out, R9out, R10out, R11out, R12out, R13out, R14out, R15out, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, input clear, clk, read, R0in, R1in, R2in, R3in, R4in, R5in, R6in, R7in, R8in, R9in, R10in, R11in, R12in, R13in, R14in, R15in, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, MAR, output [63:0] Z, ALUout);
+module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input clear, clk, read, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, InPortIn, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, MAR, C_sign_ext, InPortOutput, OutPortOut, output [63:0] Z, ALUout, output [15:0] Rins, Routs);
 
    // Wires for outputs of registers to bus
    //wire [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR;
@@ -47,9 +47,15 @@ module Datapath(input R0out, R1out, R2out, R3out, R4out, R5out, R6out, R7out, R8
    // MDR Unit
    MDR_unit mdr (read, clk, MDRin, clear, bus_mux_out, Mdatain, MDR);   
 
-   Bus32bit bus (.i0out(R0out), .i1out(R1out), .i2out(R2out), .i3out(R3out), .i4out(R4out), .i5out(R5out), .i6out(R6out), .i7out(R7out), .i8out(R8out), .i9out(R9out), .i10out(R10out), .i11out(R11out), .i12out(R12out), .i13out(R13out), .i14out(R14out), .i15out(R15out), .i16out(HIout), .i17out(LOout), .i18out(Zhighout), .i19out(Zlowout), .i20out(PCout), .i21out(MDRout), .i22out(), .i23out(), .i24out(), .i25out(), .i26out(), .i27out(), .i28out(), .i29out(), .i30out(), .i31out(), .i0(R0), .i1(R1), .i2(R2), .i3(R3), .i4(R4), .i5(R5), .i6(R6), .i7(R7), .i8(R8), .i9(R9), .i10(R10), .i11(R11), .i12(R12), .i13(R13), .i14(R14), .i15(R15), .i16(Hi), .i17(Lo), .i18(Z[63:32]), .i19(Z[31:0]), .i20(PC), .i21(MDR), .i22(), .i23(), .i24(), .i25(), .i26(), .i27(), .i28(), .i29(), .i30(), .i31(), .busmux_out(bus_mux_out));
+   Bus32bit bus (.i0out(Routs[0]), .i1out(Routs[1]), .i2out(Routs[2]), .i3out(Routs[3]), .i4out(Routs[4]), .i5out(Routs[5]), .i6out(Routs[6]), .i7out(Routs[7]), .i8out(Routs[8]), .i9out(Routs[9]), .i10out(Routs[10]), .i11out(Routs[11]), .i12out(Routs[12]), .i13out(Routs[13]), .i14out(Routs[14]), .i15out(Routs[15]), .i16out(HIout), .i17out(LOout), .i18out(Zhighout), .i19out(Zlowout), .i20out(PCout), .i21out(MDRout), .i22out(Inportout), .i23out(Cout), .i24out(), .i25out(), .i26out(), .i27out(), .i28out(), .i29out(), .i30out(), .i31out(), .i0(R0), .i1(R1), .i2(R2), .i3(R3), .i4(R4), .i5(R5), .i6(R6), .i7(R7), .i8(R8), .i9(R9), .i10(R10), .i11(R11), .i12(R12), .i13(R13), .i14(R14), .i15(R15), .i16(Hi), .i17(Lo), .i18(Z[63:32]), .i19(Z[31:0]), .i20(PC), .i21(MDR), .i22(InPortOutput), .i23(C_sign_ext), .i24(), .i25(), .i26(), .i27(), .i28(), .i29(), .i30(), .i31(), .busmux_out(bus_mux_out));
 
    Alu alu (clk, AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, Yout, bus_mux_out, ALUout);
+
+   Sel_Enc sel_enc(Gra, Grb, Grc, Rin, Rout, BAout, IR, Rins, Routs, C_sign_ext);
+
+   Inport inport(clear, clk, strobe, InPortIn, InPortOutput);
+
+   Outport outport(clear, clk, OutPort, bus_mux_out, OutPortOut);
    
  
 endmodule // Datapath
