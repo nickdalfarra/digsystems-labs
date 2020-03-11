@@ -10,7 +10,7 @@ module RAM_tb();
 	
 	assign data_wire = (we == 1) ? data : 32'bz;
 	
-	RAM dut (re, we, addr, data_wire);
+	RAM dut (re, we, data_wire, addr);
 	
 	initial forever #10 clk = ~clk;
 	
@@ -40,6 +40,7 @@ module RAM_tb();
 		addr = addr + 1; #10; //Scan the first 5 addresses
 		
 		we = 1; #10; // try to read and write both at once
+		we = 0; re = 0; addr = 0;
 				
 	end
 	
