@@ -4,7 +4,7 @@ module p2_datapath_tb();
 
    reg MARin, Zin, PCin, MDRin, IRin, Yin, Gra, Grb, Grc, Rin, Rout, BAout;
    reg IncPC, Read, ADD, AND, OR, SUB, SHR, SHL, ROL, ROR, NEG, NOT;
-   reg Clock;
+   reg Clock, clear;
    reg [31:0] Mdatain;
 	wire [31:0] MAR, R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, C_sign_ext;
 	wire [63:0] Z, ALUout;
@@ -51,6 +51,8 @@ module p2_datapath_tb();
    always @(Present_state) begin
       case(Present_state)
 	Default: begin
+	   clear <= 0;
+	   
 	   PCout <= 0;
 	   Zlowout <= 0;
 	   MDRout <= 0;
@@ -110,7 +112,7 @@ module p2_datapath_tb();
 	   PCout <= 0; MARin <= 0;
 	   IncPC <= 0;
 	   
-	   #5
+	   #20
 	     Zin <= 0;
 	   
 	   Zlowout <= 1;
