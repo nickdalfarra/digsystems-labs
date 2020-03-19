@@ -10,12 +10,9 @@ module Register64 (clear, clk, Rin, D, Q);
    always @(posedge clk)
      begin
 	if (clear == 1)
-	  begin
-	     register = 0;
-	  end else if (Rin == 1)
-	    begin
-	       register = D;
-	    end
+	  register <= 0;
+	else if (Rin == 1)
+	  register <= D;
      end
    
    assign Q = register;

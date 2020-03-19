@@ -10,6 +10,48 @@
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Sel_Enc.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Sel_Enc
+# 
+# Top level modules:
+# 	Sel_Enc
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/R0.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module R0
+# 
+# Top level modules:
+# 	R0
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Outport.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Outport
+# 
+# Top level modules:
+# 	Outport
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Or12Bit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Or12Bit
+# 
+# Top level modules:
+# 	Or12Bit
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Inport.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Inport
+# 
+# Top level modules:
+# 	Inport
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Datapath.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Datapath
+# 
+# Top level modules:
+# 	Datapath
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/And4Bit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module And4Bit
+# 
+# Top level modules:
+# 	And4Bit
 # vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Alu.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Alu
@@ -46,23 +88,94 @@
 # 
 # Top level modules:
 # 	Cla_4
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/MuxMD.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MuxMD
+# 
+# Top level modules:
+# 	MuxMD
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/MDR_unit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MDR_unit
+# 
+# Top level modules:
+# 	MDR_unit
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Register64.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Register64
+# 
+# Top level modules:
+# 	Register64
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Register32.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Register32
+# 
+# Top level modules:
+# 	Register32
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/MDR.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module MDR
+# 
+# Top level modules:
+# 	MDR
 # vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Bit_stage.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Bit_stage
 # 
 # Top level modules:
 # 	Bit_stage
-# 
-# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/alu_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Bus32bit.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module alu_tb
+# -- Compiling module Bus32bit
 # 
 # Top level modules:
-# 	alu_tb
+# 	Bus32bit
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Mux32bit32to1
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  alu_tb
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps alu_tb 
-# Loading work.alu_tb
+# Top level modules:
+# 	Mux32bit32to1
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Mux8bit32to1
+# 
+# Top level modules:
+# 	Mux8bit32to1
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Encoder32to5
+# 
+# Top level modules:
+# 	Encoder32to5
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Divider32bit.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Divider32bit
+# 
+# Top level modules:
+# 	Divider32bit
+# 
+# vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module p2_datapath_tb
+# 
+# Top level modules:
+# 	p2_datapath_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  p2_datapath_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps p2_datapath_tb 
+# Loading work.p2_datapath_tb
+# Loading work.Datapath
+# Loading work.R0
+# Loading work.Register32
+# Loading work.Register64
+# Loading work.MDR_unit
+# Loading work.MuxMD
+# Loading work.MDR
+# Loading work.Bus32bit
+# Loading work.Encoder32to5
+# Loading work.Mux32bit32to1
+# Loading work.Mux8bit32to1
 # Loading work.Alu
 # Loading work.Multiplier
 # Loading work.Booth_encoder
@@ -70,26 +183,61 @@
 # Loading work.Cla_16
 # Loading work.Cla_4
 # Loading work.Bit_stage
+# Loading work.Divider32bit
+# Loading work.Sel_Enc
+# Loading work.And4Bit
+# Loading work.Or12Bit
+# Loading work.Inport
+# Loading work.Outport
+# ** Warning: (vsim-3017) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Too few port connections. Expected 72, found 59.
+# 
+#         Region: /p2_datapath_tb/DUT
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'HIout'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'LOout'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'Zhighout'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'Inportout'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'HIin'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'LOin'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'strobe'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'OutPort'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'MUL'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'DIV'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'InPortIn'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'InPortOutput'.
+# 
+# ** Warning: (vsim-3722) C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(15): [TFMPC] - Missing connection for port 'OutPortOut'.
+# 
 # 
 # add wave *
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 # 
 #           File in use by: nickdf4  Hostname: NICKDF1-PC  ProcessID: 16180
 # 
-#           Attempting to use alternate WLF file "./wlftfie53j".
+#           Attempting to use alternate WLF file "./wlft9ahiig".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 # 
-#           Using alternate file: ./wlftfie53j
+#           Using alternate file: ./wlft9ahiig
 # 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 500 ns
-# ** Note: $finish    : C:/altera/13.0sp1/digsystems-labs/alu_tb.v(29)
-#    Time: 500 ps  Iteration: 0  Instance: /alu_tb
+# run 200 ns
+# ** Note: $finish    : C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v(25)
+#    Time: 500 ps  Iteration: 0  Instance: /p2_datapath_tb
 # 1
-# Break in Module alu_tb at C:/altera/13.0sp1/digsystems-labs/alu_tb.v line 29
+# Break in Module p2_datapath_tb at C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v line 25
 # Simulation Breakpoint: 1
-# Break in Module alu_tb at C:/altera/13.0sp1/digsystems-labs/alu_tb.v line 29
-# MACRO ./CPU_run_msim_rtl_verilog.do PAUSED at line 23
+# Break in Module p2_datapath_tb at C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v line 25
+# MACRO ./CPU_run_msim_rtl_verilog.do PAUSED at line 40

@@ -30,44 +30,44 @@ module Alu (input clk, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NE
    always @(posedge clk)
      begin
 	if (AND == 1) begin
-	   ALU_result = {32'b0, A & B};
+	   ALU_result <= {32'b0, A & B};
 	end
 	else if (OR == 1) begin
-	   ALU_result = {32'b0, A | B};
+	   ALU_result <= {32'b0, A | B};
 	end
 	else if (ADD == 1) begin
-	   ALU_result = (C_add[31] == 1'b0)? {32'b0, C_add} : {32'hFFFFFFFF, C_add};
+	   ALU_result <= (C_add[31] == 1'b0)? {32'b0, C_add} : {32'hFFFFFFFF, C_add};
 	end
 	else if (SUB == 1) begin
 	   ALU_result <= (C_sub[31] == 1'b0)? {32'b0, C_sub} : {32'hFFFFFFFF, C_sub};
 	end
 	else if (MUL == 1) begin
 	   #180
-	   ALU_result = C_mult;
+	   ALU_result <= C_mult;
 	end
 	else if (DIV == 1) begin
-	   ALU_result = C_div;
+	   ALU_result <= C_div;
 	end
 	else if (SHR == 1) begin
-	   ALU_result = {32'b0, A >> B};
+	   ALU_result <= {32'b0, A >> B};
 	end
 	else if (SHL == 1) begin
-	   ALU_result = {32'b0, A << B};
+	   ALU_result <= {32'b0, A << B};
 	end
 	else if (ROR == 1) begin
-	   ALU_result = {32'b0, (A >> B) | (A << (32 - B))};
+	   ALU_result <= {32'b0, (A >> B) | (A << (32 - B))};
 	end
 	else if (ROL == 1) begin
-	   ALU_result = {32'b0, (A << B) | (A >> (32 - B))};
+	   ALU_result <= {32'b0, (A << B) | (A >> (32 - B))};
 	end
 	else if (NEG == 1) begin
-	   ALU_result = {32'b0, ~B + 1'b1};
+	   ALU_result <= {32'b0, ~B + 1'b1};
 	end
 	else if (NOT == 1) begin
-	   ALU_result = {32'b0, ~B};
+	   ALU_result <= {32'b0, ~B};
 	end
 	else if (IncPC == 1) begin
-	   ALU_result = {32'b0, B + 32'h00000004};
+	   ALU_result <= {32'b0, B + 32'h00000004};
 	end
      end
    
