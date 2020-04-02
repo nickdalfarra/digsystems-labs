@@ -3,7 +3,6 @@ module p2_datapath_tb();
    reg MARin, Zin, PCin, MDRin, IRin, Yin, Gra, Grb, Grc, Rin, Rout, BAout;
    reg IncPC, Read, ADD, AND, OR, SUB, SHR, SHL, ROL, ROR, NEG, NOT;
    reg Clock, clear;
-	reg [31:0] preload;
 	wire [31:0] Mdatain, ram_data, MDR, MAR, R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, 
 	R13, R14, R15, Hi, Lo, PC, bus_mux_out, IR, C_sign_ext;
 	wire [63:0] Z, ALUout;
@@ -13,7 +12,7 @@ module p2_datapath_tb();
 	T3 = 4'b0100, T4 = 4'b0101, T5 = 4'b0110, T6 = 4'b0111, T7 = 4'b1000;
    reg [3:0]  Present_state = Default;
 
-   Datapath DUT (.Mdatain(Mdatain), .preload(preload), .clear(clear), .Cout(Cout), .BAout(BAout), .PCout(PCout), .Zlowout(Zlowout), 
+   Datapath DUT (.Mdatain(Mdatain), .clear(clear), .Cout(Cout), .BAout(BAout), .PCout(PCout), .Zlowout(Zlowout), 
 	.MDRout(MDRout), .Gra(Gra), .Grb(Grb), .Grc(Grc), .Rin(Rin), .Rout(Rout), .MARin(MARin), 
 	.Zin(Zin), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .Yin(Yin), .IncPC(IncPC), .read(Read), 
 	.ADD(ADD), .clk(Clock), .MAR(MAR), .R0(R0), .R1(R1), .R2(R2), .R3(R3), .R4(R4), 
@@ -36,12 +35,6 @@ module p2_datapath_tb();
    always @(posedge Clock) begin
       case (Present_state)
 		Default : Present_state = T0;
-		//Reg_load1a : Present_state = Reg_load1b;
-		//Reg_load1b : Present_state = T0;
-		//Reg_load2a : Present_state = Reg_load2b;
-		//Reg_load2b : Present_state = Reg_load3a;
-		//Reg_load3a : Present_state = Reg_load3b;
-		//Reg_load3b : Present_state = T0;
 		T0 : Present_state = T1;
 		T1 : #10 Present_state = T2;
 		T2 : #10 Present_state = T3;
@@ -86,23 +79,7 @@ module p2_datapath_tb();
 		NOT <= 0;
 		BAout <= 0;
 	end // case: Default
-	
-	/*// Load address of ld instr into MDR by clearing (just make zero for now)
-	Reg_load1a: begin
-	   #10 clear <= 0; Read <= 1;
-	   MDRin <= 1;	
-		#10 MDRin <= 0;
-		Read <= 0;
-	end */
 
-	// Load address of load instr into PC by clearing (just make zero for now)
-	/* Reg_load1a: begin
-	   #10 MDRout <= 1;
-	   PCin <= 1;
-	   #10 MDRout <= 0;
-	   PCin <= 0;
-	end */
-	
 	// PC loaded with 'h0 due to clear
 	// Get PC in MAR to go to mem and get ld instr (@ addr 0), get PC+4 in Z
 	T0: begin
@@ -114,7 +91,6 @@ module p2_datapath_tb();
 	end
 	// Put PC+4 in PC, load instr (ld R1, 85) from memory into MDR
 	T1: begin
-	   //Mdatain <= 32'h00800085;
 		PCout <= 0; MARin <= 0;
 	   IncPC <= 0;
 		#20 Zlowout <= 1;
@@ -145,6 +121,38 @@ module p2_datapath_tb();
 		BAout <= 0;
 	   Grb <= 0;
 	   Yin <= 0;
+		Cout <= 1;
+	   ADD <= 1;
+	   Zin <= 1; 
+	end
+	// Put C_sign_ext = 32'h85 in MAR
+	T5: begin	   
+	   #20 Cout <= 0;
+	   ADD <= 0;
+		Zin <= 0;
+		Zlowout <= 1;
+	   MARin <= 1;
+	   #20 Zlowout <= 0;
+	   MARin <= 0;
+	end
+	T6: begin
+		// For some reason any assignments i do in this phase don't happen
+		// I think it's being skipped due to previous # delays...to fix
+	end
+	// Read data from $85 in RAM into MDR (shoud be 'h2)
+	// Select R1 as Ra, put data from mem loc $85 in R1 ('h2) 
+	T7: begin  
+	   MDRin <= 1;
+		Read <= 1;
+	   #20 MDRout <= 1;
+	   Gra <= 1;
+	   Rin <= 1;
+	end
+      endcase // case (Present_state)
+   end // always @ (Present_state)   
+endmodule // p2_datapath_tb
+
+;
 		Cout <= 1;
 	   ADD <= 1;
 	   Zin <= 1; 

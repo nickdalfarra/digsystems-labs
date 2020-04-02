@@ -1,7 +1,8 @@
 
-module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input clear, clk, read, write, PCin, IRin, MARin, 
+module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input 
+clear, clk, read, write, PCin, IRin, MARin, 
 Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, 
-SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] preload, input [31:0] InPortIn, 
+SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] InPortIn, 
 output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, 
 bus_mux_out, IR, MAR, MDR, C_sign_ext, InPortOutput, OutPortOut, Mdatain, output [63:0] Z, ALUout, 
 output [15:0] Rins, Routs, inout [31:0] ram_data);
@@ -9,28 +10,26 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
 /* module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input clear, clk, read, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, InPortIn, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, C_sign_ext, InPortOutput, OutPortOut, output [63:0] Z, ALUout, output [15:0] Rins, Routs); */
 
    wire [31:0] Yout;
-	
-   //wire [31:0] Mdatain;
 
    wire        conff_out; // not sure where this is supposed to go
 
    // General registers
-   R0 r0 (clear, clk, R0in, BAout, bus_mux_out, R0);
-   Register32 r1 (clear, clk, R1in, bus_mux_out, R1);
-   Register32 r2 (clear, clk, R2in, bus_mux_out, R2);
-   Register32 r3 (clear, clk, R3in, bus_mux_out, R3);
-   Register32 r4 (clear, clk, R4in, bus_mux_out, R4);
-   Register32 r5 (clear, clk, R5in, bus_mux_out, R5);
-   Register32 r6 (clear, clk, R6in, bus_mux_out, R6);
-   Register32 r7 (clear, clk, R7in, bus_mux_out, R7);
-   Register32 r8 (clear, clk, R8in, bus_mux_out, R8);
-   Register32 r9 (clear, clk, R9in, bus_mux_out, R9);
-   Register32 r10 (clear, clk, R10in, bus_mux_out, R10);
-   Register32 r11 (clear, clk, R11in, bus_mux_out, R11);
-   Register32 r12 (clear, clk, R12in, bus_mux_out, R12);
-   Register32 r13 (clear, clk, R13in, bus_mux_out, R13);
-   Register32 r14 (clear, clk, R14in, bus_mux_out, R14);
-   Register32 r15 (clear, clk, R15in, bus_mux_out, R15);
+   R0 r0 (clear, clk, Rins[0], BAout, bus_mux_out, R0);
+   Register32 r1 (clear, clk, Rins[1], bus_mux_out, R1);
+   Register32 r2 (clear, clk, Rins[2], bus_mux_out, R2);
+   Register32 r3 (clear, clk, Rins[3], bus_mux_out, R3);
+   Register32 r4 (clear, clk, Rins[4], bus_mux_out, R4);
+   Register32 r5 (clear, clk, Rins[5], bus_mux_out, R5);
+   Register32 r6 (clear, clk, Rins[6], bus_mux_out, R6);
+   Register32 r7 (clear, clk, Rins[7], bus_mux_out, R7);
+   Register32 r8 (clear, clk, Rins[8], bus_mux_out, R8);
+   Register32 r9 (clear, clk, Rins[9], bus_mux_out, R9);
+   Register32 r10 (clear, clk, Rins[10], bus_mux_out, R10);
+   Register32 r11 (clear, clk, Rins[11], bus_mux_out, R11);
+   Register32 r12 (clear, clk, Rins[12], bus_mux_out, R12);
+   Register32 r13 (clear, clk, Rins[13], bus_mux_out, R13);
+   Register32 r14 (clear, clk, Rins[14], bus_mux_out, R14);
+   Register32 r15 (clear, clk, Rins[15], bus_mux_out, R15);
 
    // Special registers
    Register32 pc (clear, clk, PCin, bus_mux_out, PC);
@@ -71,7 +70,7 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
 	// This is a mess but idk what else to do
 	assign Mdatain = ram_data;
 	
-	assign ram_data = MDR;  
+	//assign ram_data = MDR;  
 	
 	// same read & Mdatain as in MDR_unit. write is currently only sent to RAM. "data" is an inout port
 	//RAM memory(.read(read), .write(write), .data(Mdatain), .addr(MAR));
