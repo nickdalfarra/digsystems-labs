@@ -6,6 +6,7 @@ vlib rtl_work
 vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Sel_Enc.v}
+vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/RAM.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/R0.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Outport.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Or12Bit.v}
@@ -18,6 +19,7 @@ vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/alte
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Cla_32.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Cla_16.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Cla_4.v}
+vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/conff_logic.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/MuxMD.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/MDR_unit.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Register64.v}
@@ -29,6 +31,8 @@ vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/alte
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/Divider32bit.v}
+vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/decoder_2to4.v}
+vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/clocked_dff.v}
 
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v}
 

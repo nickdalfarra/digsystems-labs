@@ -1,4 +1,5 @@
 
+
 module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input 
 clear, clk, read, write, PCin, IRin, MARin, 
 Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, 
@@ -67,12 +68,14 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
 
    RAM ram(read, write, ram_data, MAR);
 	
-	// This is a mess but idk what else to do
-	assign Mdatain = ram_data;
+   // This is a mess but idk what else to do
+   assign Mdatain = ram_data;
 	
-	//assign ram_data = MDR;  
+   //assign ram_data = MDR;  
+
 	
-	// same read & Mdatain as in MDR_unit. write is currently only sent to RAM. "data" is an inout port
-	//RAM memory(.read(read), .write(write), .data(Mdatain), .addr(MAR));
+   // same read & Mdatain as in MDR_unit. write is currently only sent to RAM. "data" is an inout port
+   //RAM memory(.read(read), .write(write), .data(Mdatain), .addr(MAR));
+
 	
 endmodule // Datapath

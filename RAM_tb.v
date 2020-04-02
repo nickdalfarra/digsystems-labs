@@ -16,8 +16,14 @@ module RAM_tb();
 	
 	always @(posedge clk) begin
 	
-	 
-		re = 1; we = 0; #10;
+	
+		// Initization test suite
+		re = 1;
+		addr = addr + 1; #10;
+		addr = addr - 1; #10;
+	
+		// Regular test suite
+		/*re = 1; we = 0; #10;
 		addr = addr + 1; #10;
 		addr = addr + 1; #10;
 		addr = addr + 1; #10;
@@ -40,7 +46,7 @@ module RAM_tb();
 		addr = addr + 1; #10; //Scan the first 5 addresses
 		
 		we = 1; #10; // try to read and write both at once
-		we = 0; re = 0; addr = 0;
+		we = 0; re = 0; addr = 0; */
 				
 	end
 	
