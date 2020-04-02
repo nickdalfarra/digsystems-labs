@@ -3,19 +3,24 @@ module p2_datapath_tb();
    reg MARin, Zin, PCin, MDRin, IRin, Yin, Gra, Grb, Grc, Rin, Rout, BAout;
    reg IncPC, Read, ADD, AND, OR, SUB, SHR, SHL, ROL, ROR, NEG, NOT;
    reg Clock, clear;
-   reg [31:0] Mdatain;
-	wire [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, C_sign_ext;
+	reg [31:0] preload;
+	wire [31:0] Mdatain, ram_data, MDR, MAR, R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, 
+	R13, R14, R15, Hi, Lo, PC, bus_mux_out, IR, C_sign_ext;
 	wire [63:0] Z, ALUout;
    wire [15:0] Rins, Routs;
    
-
-   parameter Default = 4'b0000, Reg_load1a = 4'b0001, Reg_load1b = 4'b0010, 
-	Reg_load2a = 4'b0011, Reg_load2b = 4'b0100, Reg_load3a = 4'b0101, 
-	Reg_load3b = 4'b0110, T0 = 4'b0111, T1 = 4'b1000, T2 = 4'b1001, 
-	T3 = 4'b1010, T4 = 4'b1011, T5 = 4'b1100, T6 = 4'b1101, T7 = 4'b1110;
+   parameter Default = 4'b0000, T0 = 4'b0001, T1 = 4'b0010, T2 = 4'b0011, 
+	T3 = 4'b0100, T4 = 4'b0101, T5 = 4'b0110, T6 = 4'b0111, T7 = 4'b1000;
    reg [3:0]  Present_state = Default;
 
-   Datapath DUT (.clear(clear), .Cout(Cout), .BAout(BAout), .PCout(PCout), .Zlowout(Zlowout), .MDRout(MDRout), .Gra(Gra), .Grb(Grb), .Grc(Grc), .Rin(Rin), .Rout(Rout), .MARin(MARin), .Zin(Zin), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .Yin(Yin), .IncPC(IncPC), .read(Read), .ADD(ADD), .clk(Clock), .Mdatain(Mdatain), .R0(R0), .R1(R1), .R2(R2), .R3(R3), .R4(R4), .R5(R5), .R6(R6), .R7(R7), .R8(R8), .R9(R9), .R10(R10), .R11(R11), .R12(R12), .R13(R13), .R14(R14), .R15(R15), .Hi(Hi), .Lo(Lo), .MDR(MDR), .IR(IR), .Z(Z), .AND(AND), .OR(OR), .SUB(SUB), .SHR(SHR), .SHL(SHL), .ROR(ROR), .ROL(ROL), .NEG(NEG), .NOT(NOT), .bus_mux_out(bus_mux_out), .ALUout(ALUout), .PC(PC), .C_sign_ext(C_sign_ext), .Rins(Rins), .Routs(Routs));
+   Datapath DUT (.Mdatain(Mdatain), .preload(preload), .clear(clear), .Cout(Cout), .BAout(BAout), .PCout(PCout), .Zlowout(Zlowout), 
+	.MDRout(MDRout), .Gra(Gra), .Grb(Grb), .Grc(Grc), .Rin(Rin), .Rout(Rout), .MARin(MARin), 
+	.Zin(Zin), .PCin(PCin), .MDRin(MDRin), .IRin(IRin), .Yin(Yin), .IncPC(IncPC), .read(Read), 
+	.ADD(ADD), .clk(Clock), .MAR(MAR), .R0(R0), .R1(R1), .R2(R2), .R3(R3), .R4(R4), 
+	.R5(R5), .R6(R6), .R7(R7), .R8(R8), .R9(R9), .R10(R10), .R11(R11), .R12(R12), .R13(R13), .R14(R14), 
+	.R15(R15), .Hi(Hi), .Lo(Lo), .IR(IR),.Z(Z), .AND(AND), .OR(OR), .SUB(SUB),.SHR(SHR), .SHL(SHL), 
+	.ROR(ROR), .ROL(ROL), .NEG(NEG), .NOT(NOT), .bus_mux_out(bus_mux_out), .ALUout(ALUout), 
+	.ram_data(ram_data), .MDR(MDR), .PC(PC), .C_sign_ext(C_sign_ext), .Rins(Rins), .Routs(Routs));
 
    initial begin
       Clock = 0;
@@ -30,31 +35,28 @@ module p2_datapath_tb();
 
    always @(posedge Clock) begin
       case (Present_state)
-	Default : Present_state = Reg_load1a;
-	Reg_load1a : Present_state = Reg_load1b;
-	Reg_load1b : Present_state = T0;
-	//Reg_load2a : Present_state = Reg_load2b;
-	//Reg_load2b : Present_state = Reg_load3a;
-	//Reg_load3a : Present_state = Reg_load3b;
-	//Reg_load3b : Present_state = T0;
-	T0 : Present_state = T1;
-	T1 : #10 Present_state = T2;
-	T2 : #10 Present_state = T3;
-	T3 : #10 Present_state = T4;
-	T4 : #20 Present_state = T5;
-	T5:  #40 Present_state = T6;
-    T6 : #60 Present_state = T7;
-
-	
-	
+		Default : Present_state = T0;
+		//Reg_load1a : Present_state = Reg_load1b;
+		//Reg_load1b : Present_state = T0;
+		//Reg_load2a : Present_state = Reg_load2b;
+		//Reg_load2b : Present_state = Reg_load3a;
+		//Reg_load3a : Present_state = Reg_load3b;
+		//Reg_load3b : Present_state = T0;
+		T0 : Present_state = T1;
+		T1 : #10 Present_state = T2;
+		T2 : #10 Present_state = T3;
+		T3 : #10 Present_state = T4;
+		T4 : #20 Present_state = T5;
+		T5:  #40 Present_state = T6;
+		T6 : #60 Present_state = T7;	
       endcase // case (Present_state)      
    end // always @ (posedge Clock)
 
    always @(Present_state) begin
       case(Present_state)
+	// Assert clear to load zero's into all registers
 	Default: begin
-	   clear <= 0;
-	   
+	   clear <= 1;	   
 	   PCout <= 0;
 	   Zlowout <= 0;
 	   MDRout <= 0;
@@ -83,27 +85,28 @@ module p2_datapath_tb();
 		NEG <= 0;
 		NOT <= 0;
 		BAout <= 0;
-	   Mdatain <= 32'h00000000;
 	end // case: Default
 	
-	// Load 0 into MDR
+	/*// Load address of ld instr into MDR by clearing (just make zero for now)
 	Reg_load1a: begin
-	   #10 Read <= 1;
+	   #10 clear <= 0; Read <= 1;
 	   MDRin <= 1;	
 		#10 MDRin <= 0;
-	   Read <= 0;		
-	end
+		Read <= 0;
+	end */
 
-	// Load 0 into PC
-	Reg_load1b: begin
+	// Load address of load instr into PC by clearing (just make zero for now)
+	/* Reg_load1a: begin
 	   #10 MDRout <= 1;
 	   PCin <= 1;
 	   #10 MDRout <= 0;
 	   PCin <= 0;
-	end
+	end */
 	
-	// Get PC in MAR to go to mem and get next instr, get PC+4 in Z
+	// PC loaded with 'h0 due to clear
+	// Get PC in MAR to go to mem and get ld instr (@ addr 0), get PC+4 in Z
 	T0: begin
+		clear <= 0;
 		PCout <= 1;
 	   MARin <= 1;
 	   IncPC <= 1;
@@ -111,7 +114,7 @@ module p2_datapath_tb();
 	end
 	// Put PC+4 in PC, load instr (ld R1, 85) from memory into MDR
 	T1: begin
-	   Mdatain <= 32'h00800085;
+	   //Mdatain <= 32'h00800085;
 		PCout <= 0; MARin <= 0;
 	   IncPC <= 0;
 		#20 Zlowout <= 1;
@@ -156,13 +159,14 @@ module p2_datapath_tb();
 	   #20 Zlowout <= 0;
 	   MARin <= 0;
 	end
-	// Read data from $85 in RAM into MDR (pretend it's 2)
 	T6: begin
-		// For some reason any assignments i do in this phase don't happen...to fix
+		// For some reason any assignments i do in this phase don't happen
+		// I think it's being skipped due to previous # delays...to fix
 	end
+	// Read data from $85 in RAM into MDR (shoud be 'h2)
 	// Select R1 as Ra, put data from mem loc $85 in R1 ('h2) 
 	T7: begin  
-		Mdatain <= 32'h00000002; 
+		//Mdatain <= 32'h00000002; 
 	   MDRin <= 1;
 		Read <= 1;
 	   #20 MDRout <= 1;
@@ -172,3 +176,4 @@ module p2_datapath_tb();
       endcase // case (Present_state)
    end // always @ (Present_state)   
 endmodule // p2_datapath_tb
+
