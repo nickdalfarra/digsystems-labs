@@ -66,7 +66,6 @@ entity Datapath is
         MDR             : out    vl_logic_vector(31 downto 0);
         bus_mux_out     : out    vl_logic_vector(31 downto 0);
         IR              : out    vl_logic_vector(31 downto 0);
-        MAR             : out    vl_logic_vector(31 downto 0);
         C_sign_ext      : out    vl_logic_vector(31 downto 0);
         InPortOutput    : out    vl_logic_vector(31 downto 0);
         OutPortOut      : out    vl_logic_vector(31 downto 0);

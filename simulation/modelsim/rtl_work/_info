@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\altera\13.0sp1\digsystems-labs\simulation\modelsim
 vAlu
-I@knZl2G^gh?Q0Rf8L^WQK3
+IA?^<=<ak1UUK=fZ4GjZ=W3
 VmMf<Pa9n4n=Ol^:DB9lI33
 Z1 dC:\altera\13.0sp1\digsystems-labs\simulation\modelsim
-Z2 w1583765060
+Z2 w1584627383
 8C:/altera/13.0sp1/digsystems-labs/Alu.v
 FC:/altera/13.0sp1/digsystems-labs/Alu.v
 L0 1
@@ -18,9 +18,9 @@ Z4 o-vlog01compat -work work -O0
 Z5 !s92 -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs -O0
 n@alu
 !i10b 1
-!s100 _0]FeLGV6TFilRRLz0eUj2
+!s100 eSQ]S8aJZ3fGlEzlc`Qn82
 !s85 0
-!s108 1584577858.674000
+!s108 1585839422.349000
 !s107 C:/altera/13.0sp1/digsystems-labs/Alu.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Alu.v|
 !s101 -O0
@@ -28,7 +28,7 @@ vAnd4Bit
 Ib2T<lUkUga0Snb6A7nlOf2
 VlSESPz:UBSN[<5S;7RXYP1
 R1
-R2
+Z6 w1583765060
 8C:/altera/13.0sp1/digsystems-labs/And4Bit.v
 FC:/altera/13.0sp1/digsystems-labs/And4Bit.v
 L0 1
@@ -41,7 +41,7 @@ n@and4@bit
 !i10b 1
 !s100 jbo_[F2Afa0;WLWd0W2ZP1
 !s85 0
-!s108 1584577858.503000
+!s108 1585839422.146000
 !s107 C:/altera/13.0sp1/digsystems-labs/And4Bit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/And4Bit.v|
 !s101 -O0
@@ -49,7 +49,7 @@ vBit_stage
 IV5hj?YmQ0zQYdNzD:f5AZ3
 V5hR]BzPhYKHFD>zck@;`o2
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Bit_stage.v
 FC:/altera/13.0sp1/digsystems-labs/Bit_stage.v
 L0 1
@@ -62,7 +62,7 @@ n@bit_stage
 !i10b 1
 !s100 P=Y^AT2f4d5j5bFHbV6G20
 !s85 0
-!s108 1584577860.658000
+!s108 1585839424.739000
 !s107 C:/altera/13.0sp1/digsystems-labs/Bit_stage.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Bit_stage.v|
 !s101 -O0
@@ -70,7 +70,7 @@ vBooth_encoder
 I:QHcJnhf71NaO^AIcl3531
 VC23@T61Bf5kje`GG>Ymz20
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Booth_encoder.v
 FC:/altera/13.0sp1/digsystems-labs/Booth_encoder.v
 L0 1
@@ -83,7 +83,7 @@ n@booth_encoder
 !i10b 1
 !s100 IHoo[fmo0g@0fPBU=V;M12
 !s85 0
-!s108 1584577859.127000
+!s108 1585839422.818000
 !s107 C:/altera/13.0sp1/digsystems-labs/Booth_encoder.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Booth_encoder.v|
 !s101 -O0
@@ -91,7 +91,7 @@ vBus32bit
 IXGAg5]Y;JJLDnMAbCL;fM2
 V]==[Jzll`790@2a2RGEf_3
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Bus32bit.v
 FC:/altera/13.0sp1/digsystems-labs/Bus32bit.v
 L0 1
@@ -104,7 +104,7 @@ n@bus32bit
 !i10b 1
 !s100 SFYNKL`[?6nUhN@lmiU0S2
 !s85 0
-!s108 1584577860.876000
+!s108 1585839424.911000
 !s107 C:/altera/13.0sp1/digsystems-labs/Bus32bit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Bus32bit.v|
 !s101 -O0
@@ -112,7 +112,7 @@ vCla_16
 IjQ3UIS94i8:[dYnF^AHhG2
 V89T1GngQbh[jEIRF?f4PA0
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Cla_16.v
 FC:/altera/13.0sp1/digsystems-labs/Cla_16.v
 L0 1
@@ -125,7 +125,7 @@ n@cla_16
 !i10b 1
 !s100 7nORh`a?5Yk2NIH<dZ=>32
 !s85 0
-!s108 1584577859.440000
+!s108 1585839423.146000
 !s107 C:/altera/13.0sp1/digsystems-labs/Cla_16.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Cla_16.v|
 !s101 -O0
@@ -133,7 +133,7 @@ vCla_32
 IzN3?3^F091<FGBVeiE;]j2
 Vl76DQj^nJ1d0W<8jj316o0
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Cla_32.v
 FC:/altera/13.0sp1/digsystems-labs/Cla_32.v
 L0 1
@@ -146,7 +146,7 @@ n@cla_32
 !i10b 1
 !s100 J5zh<4b8Q8L3GSeM[]m`21
 !s85 0
-!s108 1584577859.284000
+!s108 1585839422.958000
 !s107 C:/altera/13.0sp1/digsystems-labs/Cla_32.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Cla_32.v|
 !s101 -O0
@@ -154,7 +154,7 @@ vCla_4
 I:m5A?;:`XcoL7H^R3B[Vb0
 VSaa^0nm3Be=jPP=M5RZ9W0
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Cla_4.v
 FC:/altera/13.0sp1/digsystems-labs/Cla_4.v
 L0 1
@@ -167,15 +167,55 @@ n@cla_4
 !i10b 1
 !s100 Q1cn>LODV1_dG<Y>5RD=A2
 !s85 0
-!s108 1584577859.565000
+!s108 1585839423.287000
 !s107 C:/altera/13.0sp1/digsystems-labs/Cla_4.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Cla_4.v|
 !s101 -O0
-vDatapath
-I7bmK2]]n9c<CU]8W[RT_U2
-V[2k_hAbbRdiT<P4?`DP@z0
+vclocked_dff
+I=g?UmR15K3`C?STVkdR7E1
+VRRmmT55eX2QKFVM]cYJU;1
 R1
-w1583951127
+Z7 w1584627777
+8C:/altera/13.0sp1/digsystems-labs/clocked_dff.v
+FC:/altera/13.0sp1/digsystems-labs/clocked_dff.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 hTa:ZBPU3Fin[nW<=c7]k1
+!s85 0
+!s108 1585839425.864000
+!s107 C:/altera/13.0sp1/digsystems-labs/clocked_dff.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/clocked_dff.v|
+!s101 -O0
+vconff_logic
+I0`QhBnbmIhlKDHQ[Q8G710
+VdOS?S72lEFOgLoI[z3oCS3
+R1
+R7
+8C:/altera/13.0sp1/digsystems-labs/conff_logic.v
+FC:/altera/13.0sp1/digsystems-labs/conff_logic.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 F]C0aT<dz=:VGDSfLbHlW0
+!s85 0
+!s108 1585839423.443000
+!s107 C:/altera/13.0sp1/digsystems-labs/conff_logic.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/conff_logic.v|
+!s101 -O0
+vDatapath
+IBFQL;e6cOKTJCZE2gG76l3
+VAi?>0JmgGVU41dK=QD;Na3
+R1
+w1585076633
 8C:/altera/13.0sp1/digsystems-labs/Datapath.v
 FC:/altera/13.0sp1/digsystems-labs/Datapath.v
 L0 1
@@ -186,17 +226,37 @@ R4
 R5
 n@datapath
 !i10b 1
-!s100 >_R]_@@HFLJEcCWX90C=B3
+!s100 GJASTf4C<G]@[hS8XQ[;k3
 !s85 0
-!s108 1584577858.331000
+!s108 1585839421.927000
 !s107 C:/altera/13.0sp1/digsystems-labs/Datapath.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Datapath.v|
+!s101 -O0
+vdecoder_2to4
+Ic8]W9B@fAFVL^U^3UNzi=0
+V5a8a:j9:F_>hEjIWE9I4h2
+R1
+R7
+8C:/altera/13.0sp1/digsystems-labs/decoder_2to4.v
+FC:/altera/13.0sp1/digsystems-labs/decoder_2to4.v
+L0 1
+R3
+r1
+31
+R4
+R5
+!i10b 1
+!s100 FUG_V=jE]mZe[g?L0Tkij2
+!s85 0
+!s108 1585839425.708000
+!s107 C:/altera/13.0sp1/digsystems-labs/decoder_2to4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/decoder_2to4.v|
 !s101 -O0
 vDivider32bit
 Iz[GleZ4d`[]lWG`9beFMM1
 V]NhGb5P=1maVn=I_^K`FS3
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Divider32bit.v
 FC:/altera/13.0sp1/digsystems-labs/Divider32bit.v
 L0 1
@@ -209,7 +269,7 @@ n@divider32bit
 !i10b 1
 !s100 @5H_T9^jFf835_kSzJXch3
 !s85 0
-!s108 1584577861.439000
+!s108 1585839425.552000
 !s107 C:/altera/13.0sp1/digsystems-labs/Divider32bit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Divider32bit.v|
 !s101 -O0
@@ -217,7 +277,7 @@ vEncoder32to5
 I4IQ@g3V`<8SRo58HA2j;z3
 VcVZS8eYUg4QG:R:1Yzell2
 R1
-Z6 w1583765059
+Z8 w1583765059
 8C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v
 FC:/altera/13.0sp1/digsystems-labs/Encoder32to5.v
 L0 1
@@ -230,7 +290,7 @@ n@encoder32to5
 !i10b 1
 !s100 APU[Eib67GJLYAQ;4dCod0
 !s85 0
-!s108 1584577861.282000
+!s108 1585839425.427000
 !s107 C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Encoder32to5.v|
 !s101 -O0
@@ -238,7 +298,7 @@ vInport
 I]`Wc97mmBfA:_a[U^R]1e1
 V]OR?>^[b[:Ma@_UL@_;0P2
 R1
-Z7 w1583764730
+Z9 w1583764730
 8C:/altera/13.0sp1/digsystems-labs/Inport.v
 FC:/altera/13.0sp1/digsystems-labs/Inport.v
 L0 1
@@ -251,7 +311,7 @@ n@inport
 !i10b 1
 !s100 PF:zGjOe>l[L7<OXMona?1
 !s85 0
-!s108 1584577858.143000
+!s108 1585839421.724000
 !s107 C:/altera/13.0sp1/digsystems-labs/Inport.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Inport.v|
 !s101 -O0
@@ -259,7 +319,7 @@ vMDR
 IM;]Z`==c9fiz4BH^O_M:L3
 V5;nQN[MY_^Y;lA6K:GX[n0
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/MDR.v
 FC:/altera/13.0sp1/digsystems-labs/MDR.v
 L0 1
@@ -272,15 +332,36 @@ n@m@d@r
 !i10b 1
 !s100 Xk1]GZ3kC9?m1?J^QQD3]1
 !s85 0
-!s108 1584577860.471000
+!s108 1585839424.536000
 !s107 C:/altera/13.0sp1/digsystems-labs/MDR.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/MDR.v|
 !s101 -O0
+vMDR_tb
+!i10b 1
+!s100 Yn`d2G?Z3gkUn^hiZmB7R1
+IA<BYgHc81Do0YY853fO320
+VJQPoUiinHRPO=kjMN_16n1
+R1
+R8
+8C:/altera/13.0sp1/digsystems-labs/MDR_tb.v
+FC:/altera/13.0sp1/digsystems-labs/MDR_tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1585839426.067000
+!s107 C:/altera/13.0sp1/digsystems-labs/MDR_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/MDR_tb.v|
+!s101 -O0
+R4
+R5
+n@m@d@r_tb
 vMDR_unit
 I:KKknN4JGWY;>IPW]QFcY0
 V^`f``KN[`:<[azKd;<dBU1
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/MDR_unit.v
 FC:/altera/13.0sp1/digsystems-labs/MDR_unit.v
 L0 1
@@ -293,7 +374,7 @@ n@m@d@r_unit
 !i10b 1
 !s100 oII4G73dgV>`cBo6Am7Fc2
 !s85 0
-!s108 1584577859.877000
+!s108 1585839423.927000
 !s107 C:/altera/13.0sp1/digsystems-labs/MDR_unit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/MDR_unit.v|
 !s101 -O0
@@ -301,7 +382,7 @@ vMultiplier
 IQA^j33eNlc`hHh>cN@XZ13
 VBgzX6m9c0iQfFZUK:A`@71
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/Multiplier.v
 FC:/altera/13.0sp1/digsystems-labs/Multiplier.v
 L0 1
@@ -314,7 +395,7 @@ n@multiplier
 !i10b 1
 !s100 3H:Gfg4Xm5jLZMJ5WIeLP1
 !s85 0
-!s108 1584577858.862000
+!s108 1585839422.630000
 !s107 C:/altera/13.0sp1/digsystems-labs/Multiplier.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Multiplier.v|
 !s101 -O0
@@ -322,7 +403,7 @@ vMux32bit32to1
 I_ak:PLocTB]XeR@7UX[7I1
 V6:W;mQXdc5KQ7T4mNBKP73
 R1
-R2
+R6
 8C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v
 FC:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v
 L0 1
@@ -335,7 +416,7 @@ n@mux32bit32to1
 !i10b 1
 !s100 kXKbiz?MkSV;0nl9`^@RF0
 !s85 0
-!s108 1584577861.032000
+!s108 1585839425.052000
 !s107 C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Mux32bit32to1.v|
 !s101 -O0
@@ -343,7 +424,7 @@ vMux8bit32to1
 IZBD[1g>of@>3A:8>j8Vaj2
 VZbcWg=:IdhdROU<@D[<:V1
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v
 FC:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v
 L0 1
@@ -356,7 +437,7 @@ n@mux8bit32to1
 !i10b 1
 !s100 4G5C61L`JazzhELgEcl4@0
 !s85 0
-!s108 1584577861.157000
+!s108 1585839425.208000
 !s107 C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Mux8bit32to1.v|
 !s101 -O0
@@ -364,7 +445,7 @@ vMuxMD
 ITDg8RLz^Ijk<<VLP0;Kob2
 V<L;f3o^0BU9I8R6j_>zPj1
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/MuxMD.v
 FC:/altera/13.0sp1/digsystems-labs/MuxMD.v
 L0 1
@@ -377,7 +458,7 @@ n@mux@m@d
 !i10b 1
 !s100 FiYC:gG70K]P18JzU_QYb1
 !s85 0
-!s108 1584577859.690000
+!s108 1585839423.630000
 !s107 C:/altera/13.0sp1/digsystems-labs/MuxMD.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/MuxMD.v|
 !s101 -O0
@@ -385,7 +466,7 @@ vOr12Bit
 ISoEdX5BAMaY9hOm^kUzXh0
 VLib[2I?GloAbK=B^WTN[[2
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/Or12Bit.v
 FC:/altera/13.0sp1/digsystems-labs/Or12Bit.v
 L0 1
@@ -398,7 +479,7 @@ n@or12@bit
 !i10b 1
 !s100 0i5;mE8ZDeoCUm??XGHoS3
 !s85 0
-!s108 1584577857.878000
+!s108 1585839421.537000
 !s107 C:/altera/13.0sp1/digsystems-labs/Or12Bit.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Or12Bit.v|
 !s101 -O0
@@ -406,7 +487,7 @@ vOutport
 I0e:`aW[@9f]Mn^586lWKQ1
 VEPBhPiWVDz_SjgnGJaleX0
 R1
-R7
+R9
 8C:/altera/13.0sp1/digsystems-labs/Outport.v
 FC:/altera/13.0sp1/digsystems-labs/Outport.v
 L0 1
@@ -419,35 +500,15 @@ n@outport
 !i10b 1
 !s100 ^AC31cNdNFAi=Cd?^53ZK0
 !s85 0
-!s108 1584577857.706000
+!s108 1585839421.349000
 !s107 C:/altera/13.0sp1/digsystems-labs/Outport.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Outport.v|
 !s101 -O0
-vp2_datapath_tb
-!i10b 1
-!s100 :3h:Bc^h5J;n^2M9o]g6i0
-Izg:2X]l[I_?^l2?@9WB[i1
-Vh=h5TbGozzdbB?]hCWE2I2
-R1
-w1583953946
-8C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v
-FC:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v
-L0 1
-R3
-r1
-!s85 0
-31
-!s108 1584577861.657000
-!s107 C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v|
-!s101 -O0
-R4
-R5
 vR0
 IA^D_i:J<>9Q48LUgW52Yn0
 V8HjDUVnjh<58h52`UN>>G0
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/R0.v
 FC:/altera/13.0sp1/digsystems-labs/R0.v
 L0 1
@@ -460,15 +521,36 @@ n@r0
 !i10b 1
 !s100 X`<7lOLeiVlPCo3@4@YC51
 !s85 0
-!s108 1584577857.518000
+!s108 1585839421.006000
 !s107 C:/altera/13.0sp1/digsystems-labs/R0.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/R0.v|
+!s101 -O0
+vRAM
+IZzEB:B1^>T3NhCPm@YLkh2
+VCU:LkS:6U7h?3oi^amm5;3
+R1
+R7
+8C:/altera/13.0sp1/digsystems-labs/RAM.v
+FC:/altera/13.0sp1/digsystems-labs/RAM.v
+L0 1
+R3
+r1
+31
+R4
+R5
+n@r@a@m
+!i10b 1
+!s100 PJPW8IU7minPThS71AAc50
+!s85 0
+!s108 1585839420.771000
+!s107 C:/altera/13.0sp1/digsystems-labs/RAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/RAM.v|
 !s101 -O0
 vRegister32
 IAe99[e[Udh8Se0ogl58TE0
 VXi[DVG<FM57FXGVL:1]g]3
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/Register32.v
 FC:/altera/13.0sp1/digsystems-labs/Register32.v
 L0 1
@@ -481,15 +563,15 @@ n@register32
 !i10b 1
 !s100 MR>XX<;I@_5HHBAhCLHXP3
 !s85 0
-!s108 1584577860.283000
+!s108 1585839424.317000
 !s107 C:/altera/13.0sp1/digsystems-labs/Register32.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Register32.v|
 !s101 -O0
 vRegister64
-I<X9K?VQMNF]TD6;Jc5IP51
+I?OSGg^BzDH5Rdhl<jaJz`1
 V<<nXZ4gY6`bkV?cdhXBSV3
 R1
-R6
+R2
 8C:/altera/13.0sp1/digsystems-labs/Register64.v
 FC:/altera/13.0sp1/digsystems-labs/Register64.v
 L0 1
@@ -500,9 +582,9 @@ R4
 R5
 n@register64
 !i10b 1
-!s100 gf;X3]TLB<nc8UzXan]:81
+!s100 DYLQLohjc^HOjzSX6_SJd1
 !s85 0
-!s108 1584577860.049000
+!s108 1585839424.130000
 !s107 C:/altera/13.0sp1/digsystems-labs/Register64.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Register64.v|
 !s101 -O0
@@ -510,7 +592,7 @@ vSel_Enc
 IEUc:DW<O3HNaWihB=cDJ]1
 VQXFiK@CC3@DHzH9:MnBcA0
 R1
-R6
+R8
 8C:/altera/13.0sp1/digsystems-labs/Sel_Enc.v
 FC:/altera/13.0sp1/digsystems-labs/Sel_Enc.v
 L0 1
@@ -523,7 +605,7 @@ R5
 !i10b 1
 !s100 YcnMF>kMJB5Y8UW=Mb_jI0
 !s85 0
-!s108 1584577857.237000
+!s108 1585839420.522000
 !s107 C:/altera/13.0sp1/digsystems-labs/Sel_Enc.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/altera/13.0sp1/digsystems-labs|C:/altera/13.0sp1/digsystems-labs/Sel_Enc.v|
 !s101 -O0

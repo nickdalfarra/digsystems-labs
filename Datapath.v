@@ -1,17 +1,4 @@
-<<<<<<< HEAD
 module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input clear, clk, read, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, InPortIn, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, C_sign_ext, InPortOutput, OutPortOut, output [63:0] Z, ALUout, output [15:0] Rins, Routs);
-=======
-module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input clear, clk, read, write, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, InPortIn, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, bus_mux_out, IR, MAR, ram_data, C_sign_ext, InPortOutput, OutPortOut, output [63:0] Z, ALUout, output [15:0] Rins, Routs);
-
-   // Wires for outputs of registers to bus
-   //wire [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR;
-
-   // Wires from registers to control unit (not used yet)
-   //wire [31:0] MAR;
-
-   // Wire for bus output
-   //wire [31:0] bus_mux_out;
->>>>>>> 7302949ef680c45df62f71f10b86a8a2914b8c81
 
    // Wire for Y output to ALU
    wire [31:0] Yout;
@@ -61,7 +48,7 @@ module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAou
    Outport outport(clear, clk, OutPort, bus_mux_out, OutPortOut);
 	
 	// same read & Mdatain as in MDR_unit. write is currently only sent to RAM. "data" is an inout port
-	RAM memory(.read(read), .write(write), .data(Mdatain), .addr(MAR));
+	RAM memory(.read(read), .write(write), .data(MDR), .addr(MAR));
 	
 	
 endmodule // Datapath
