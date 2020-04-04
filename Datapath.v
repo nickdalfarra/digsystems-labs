@@ -70,26 +70,3 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
 	assign Mdatain = ram_data;
 	
 endmodule // Datapath
-, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, Yout, bus_mux_out, ALUout);
-
-   Sel_Enc sel_enc(Gra, Grb, Grc, Rin, Rout, BAout, IR, Rins, Routs, C_sign_ext);
-	
-	conff_logic conff(.out(conff_out), .busin(bus_mux_out), .ir(IR), .clk(clk));
-
-   Inport inport(clear, clk, strobe, InPortIn, InPortOutput);
-
-   Outport outport(clear, clk, OutPort, bus_mux_out, OutPortOut);
-
-   RAM ram(read, write, ram_data, MAR);
-	
-	// This is a mess but idk what else to do
-	assign Mdatain = ram_data;
-	
-	assign MDR = ram_data;
-	
-	//assign ram_data = (read == 1)? MDR;  
-	
-	// same read & Mdatain as in MDR_unit. write is currently only sent to RAM. "data" is an inout port
-	//RAM memory(.read(read), .write(write), .data(ram_data), .addr(MAR));
-	
-endmodule // Datapath

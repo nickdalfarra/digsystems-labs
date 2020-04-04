@@ -19,8 +19,3 @@ module RAM (input read, write, inout [31:0] data, input [8:0] addr);
 	end
 
 endmodule
-ror: both read and write enabled in RAM."); end
-		else if (write == 1) mem[addr] <= data;
-	end
-
-endmodule
