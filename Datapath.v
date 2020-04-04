@@ -1,19 +1,16 @@
 
-
 module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input 
 clear, clk, read, write, PCin, IRin, MARin, 
 Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, 
 SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] InPortIn, 
 output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, 
-bus_mux_out, IR, MAR, MDR, C_sign_ext, InPortOutput, OutPortOut, Mdatain, output [63:0] Z, ALUout, 
+bus_mux_out, IR, MAR, C_sign_ext, InPortOutput, OutPortOut, Mdatain, MDR, output [63:0] Z, ALUout, 
 output [15:0] Rins, Routs, inout [31:0] ram_data);
-
-/* module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input clear, clk, read, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, InPortIn, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, C_sign_ext, InPortOutput, OutPortOut, output [63:0] Z, ALUout, output [15:0] Rins, Routs); */
 
    wire [31:0] Yout;
 
    wire        conff_out; // not sure where this is supposed to go
-
+	
    // General registers
    R0 r0 (clear, clk, Rins[0], BAout, bus_mux_out, R0);
    Register32 r1 (clear, clk, Rins[1], bus_mux_out, R1);
@@ -67,15 +64,32 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
    Outport outport(clear, clk, OutPort, bus_mux_out, OutPortOut);
 
    RAM ram(read, write, ram_data, MAR);
-	
-   // This is a mess but idk what else to do
-   assign Mdatain = ram_data;
-	
-   //assign ram_data = MDR;  
 
+	assign ram_data = (read == 1)? 32'bz : MDR;
 	
-   // same read & Mdatain as in MDR_unit. write is currently only sent to RAM. "data" is an inout port
-   //RAM memory(.read(read), .write(write), .data(Mdatain), .addr(MAR));
+	assign Mdatain = ram_data;
+	
+endmodule // Datapath
+, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, Yout, bus_mux_out, ALUout);
 
+   Sel_Enc sel_enc(Gra, Grb, Grc, Rin, Rout, BAout, IR, Rins, Routs, C_sign_ext);
+	
+	conff_logic conff(.out(conff_out), .busin(bus_mux_out), .ir(IR), .clk(clk));
+
+   Inport inport(clear, clk, strobe, InPortIn, InPortOutput);
+
+   Outport outport(clear, clk, OutPort, bus_mux_out, OutPortOut);
+
+   RAM ram(read, write, ram_data, MAR);
+	
+	// This is a mess but idk what else to do
+	assign Mdatain = ram_data;
+	
+	assign MDR = ram_data;
+	
+	//assign ram_data = (read == 1)? MDR;  
+	
+	// same read & Mdatain as in MDR_unit. write is currently only sent to RAM. "data" is an inout port
+	//RAM memory(.read(read), .write(write), .data(ram_data), .addr(MAR));
 	
 endmodule // Datapath
