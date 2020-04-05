@@ -1,4 +1,4 @@
-module p2_datapath_tb();
+module ld_instr_tb();
    reg PCout, Zlowout, MDRout, Cout;
    reg MARin, Zin, PCin, MDRin, IRin, Yin, Gra, Grb, Grc, Rin, Rout, BAout;
    reg IncPC, Read, ADD, AND, OR, SUB, SHR, SHL, ROL, ROR, NEG, NOT;
@@ -89,7 +89,7 @@ module p2_datapath_tb();
 	   IncPC <= 1;
 	   Zin <= 1;	   
 	end
-	// Put PC+4 in PC, load instr (ld R1, 85) from memory into MDR
+	// Put PC+4 in PC, load instr from memory into MDR
 	T1: begin
 		PCout <= 0; MARin <= 0;
 	   IncPC <= 0;
@@ -107,7 +107,8 @@ module p2_datapath_tb();
 	   #10 MDRout <= 1;
 	   IRin <= 1;
 	end
-	// Put 0's on bus and in Y
+	// Put either 0's on bus if R0 selected or contents of Rb
+	// Put bus contents in Y
 	T3: begin
 		#10 MDRout <= 0;
 	   IRin <= 0;
@@ -115,7 +116,7 @@ module p2_datapath_tb();
 	   BAout <= 1;
 	   Yin <= 1;
 	end
-	// Put C_sign_ext = 32'h85 in Z
+	// Put C_sign_ext in Z
 	T4: begin
 	   #10 
 		BAout <= 0;
@@ -125,7 +126,7 @@ module p2_datapath_tb();
 	   ADD <= 1;
 	   Zin <= 1; 
 	end
-	// Put C_sign_ext = 32'h85 in MAR
+	// Put C_sign_ext in MAR
 	T5: begin	   
 	   #20 Cout <= 0;
 	   ADD <= 0;
@@ -139,8 +140,8 @@ module p2_datapath_tb();
 		// For some reason any assignments i do in this phase don't happen
 		// I think it's being skipped due to previous # delays...to fix
 	end
-	// Read data from $85 in RAM into MDR (shoud be 'h2)
-	// Select R1 as Ra, put data from mem loc $85 in R1 ('h2) 
+	// Read data from RAM into MDR
+	// Select R1 as Ra, put data from mem loc in R1
 	T7: begin  
 	   MDRin <= 1;
 		Read <= 1;
@@ -150,38 +151,4 @@ module p2_datapath_tb();
 	end
       endcase // case (Present_state)
    end // always @ (Present_state)   
-endmodule // p2_datapath_tb
-
-;
-		Cout <= 1;
-	   ADD <= 1;
-	   Zin <= 1; 
-	end
-	// Put C_sign_ext = 32'h85 in MAR
-	T5: begin	   
-	   #20 Cout <= 0;
-	   ADD <= 0;
-		Zin <= 0;
-		Zlowout <= 1;
-	   MARin <= 1;
-	   #20 Zlowout <= 0;
-	   MARin <= 0;
-	end
-	T6: begin
-		// For some reason any assignments i do in this phase don't happen
-		// I think it's being skipped due to previous # delays...to fix
-	end
-	// Read data from $85 in RAM into MDR (shoud be 'h2)
-	// Select R1 as Ra, put data from mem loc $85 in R1 ('h2) 
-	T7: begin  
-		//Mdatain <= 32'h00000002; 
-	   MDRin <= 1;
-		Read <= 1;
-	   #20 MDRout <= 1;
-	   Gra <= 1;
-	   Rin <= 1;
-	end
-      endcase // case (Present_state)
-   end // always @ (Present_state)   
-endmodule // p2_datapath_tb
-
+endmodule
