@@ -1,9 +1,7 @@
-
-
 module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input 
 clear, clk, read, write, PCin, IRin, MARin, 
 Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, 
-SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] InPortIn, 
+SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, CONin, output CON_FF, input [31:0] InPortIn, 
 output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, 
 bus_mux_out, IR, MAR, MDR, C_sign_ext, InPortOutput, OutPortOut, Mdatain, output [63:0] Z, ALUout, 
 output [15:0] Rins, Routs, inout [31:0] ram_data);
@@ -11,8 +9,6 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
 /* module Datapath(input Cout, HIout, LOout, Zhighout, Zlowout, PCout, MDRout, BAout, Inportout, input clear, clk, read, PCin, IRin, MARin, Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AND, OR, ADD, SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, input [31:0] Mdatain, InPortIn, output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, MDR, bus_mux_out, IR, C_sign_ext, InPortOutput, OutPortOut, output [63:0] Z, ALUout, output [15:0] Rins, Routs); */
 
    wire [31:0] Yout;
-
-   wire        conff_out; // not sure where this is supposed to go
 
    // General registers
    R0 r0 (clear, clk, Rins[0], BAout, bus_mux_out, R0);
@@ -60,13 +56,13 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
 
    Sel_Enc sel_enc(Gra, Grb, Grc, Rin, Rout, BAout, IR, Rins, Routs, C_sign_ext);
 	
-	conff_logic conff(.out(conff_out), .busin(bus_mux_out), .ir(IR), .clk(clk));
+	conff_logic conff(.out(CON_FF), .busin(bus_mux_out), .ir(IR), .CONin(CONin));
 
    Inport inport(clear, clk, strobe, InPortIn, InPortOutput);
 
    Outport outport(clear, clk, OutPort, bus_mux_out, OutPortOut);
 
-   RAM ram(read, write, ram_data, MAR);
+   RAM ram(read, write, ram_data, MAR[8:0]);
 	
    // This is a mess but idk what else to do
    assign Mdatain = ram_data;

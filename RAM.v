@@ -4,8 +4,14 @@ module RAM (input read, write, inout [31:0] data, input [8:0] addr);
 	assign data = (read == 1) ? mem[addr] : 32'bz;
 	
 	initial begin
-		mem[0] <= 'h00800055;
-		mem[85] <= 'h00000002;
+		//mem[0] <= 'h00800055; // for ld instruction
+		// mem[85] <= 'h00000002;
+		
+		//mem[0] <= 'h08800055; // for ldi instruction Case 3
+		//mem[0] <= 'h08080023; // ldi Case 4
+		
+		mem[0] <= 'h48800023; // 
+		
 	end
 	
 	always @(*) begin
