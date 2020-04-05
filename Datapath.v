@@ -4,7 +4,9 @@ Yin, HIin, LOin, Zin, MDRin, Gra, Grb, Grc, Rin, Rout, strobe, OutPort, input AN
 SUB, MUL, DIV, SHR, SHL, ROR, ROL, NEG, NOT, IncPC, CONin, output CON_FF, input [31:0] InPortIn, 
 output [31:0] R0, R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, Hi, Lo, PC, 
 bus_mux_out, IR, MAR, C_sign_ext, InPortOutput, OutPortOut, Mdatain, MDR, output [63:0] Z, ALUout, 
-output [15:0] Rins, Routs, inout [31:0] ram_data);
+output [15:0] Rins, Routs, inout [31:0] ram_data
+, output test1, test2, test3, test4 //REMOVE
+);
 
    wire [31:0] Yout;
 
@@ -54,7 +56,7 @@ output [15:0] Rins, Routs, inout [31:0] ram_data);
 
    Sel_Enc sel_enc(Gra, Grb, Grc, Rin, Rout, BAout, IR, Rins, Routs, C_sign_ext);
 	
-	conff_logic conff(.out(CON_FF), .busin(bus_mux_out), .ir(IR), .CONin(CONin));
+	conff_logic conff(.out(CON_FF), .busin(bus_mux_out), .ir(IR), .CONin(CONin), .w1(test1), .w2(test2), .w3(test3), .w4(test4));
 
    Inport inport(clear, clk, strobe, InPortIn, InPortOutput);
 

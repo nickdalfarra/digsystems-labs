@@ -15,7 +15,10 @@ module RAM (input read, write, inout [31:0] data, input [8:0] addr);
 		//mem[0] <= 'h08800055; // for ldi instruction Case 3
 		//mem[0] <= 'h08080023; // ldi Case 4
 		
-		mem[0] <= 'h48800023; // 
+		//mem[0] <= 'h91000023; // brzr
+		//mem[0] <= 'h91080023; // brnz
+		//mem[0] <= 'h91100023; // brpl
+		mem[0] <= 'h91180023; // brmi
 		
 	   // For ld R1, $85
 		 //mem[0] <= 'h00800055;
@@ -39,7 +42,7 @@ module RAM (input read, write, inout [31:0] data, input [8:0] addr);
 		// For out R1
 		// mem[0] <= 32'hB0800000;
 		// For in R1
-		mem[0] <= 32'hA8800000;
+		// mem[0] <= 32'hA8800000;
 	end
 	
 	always @(*) begin

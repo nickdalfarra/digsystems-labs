@@ -5,6 +5,6 @@ entity clocked_dff is
         q               : out    vl_logic;
         qbar            : out    vl_logic;
         D               : in     vl_logic;
-        clk             : in     vl_logic
+        CONin           : in     vl_logic
     );
 end clocked_dff;

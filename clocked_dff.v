@@ -1,4 +1,4 @@
-module clocked_dff(output reg q, output qbar, input D, clk);
+module clocked_dff(output reg q, output qbar, input D, CONin);
 
 	assign qbar = ~q;
 
@@ -6,13 +6,12 @@ module clocked_dff(output reg q, output qbar, input D, clk);
 		q <= 0;
 	end
 
-	always @(posedge clk) begin
-		
-		if (D == 0)
-			q <= 0;
-		else if (D == 1)
-			q <= 1;
-		
+	always @( * ) begin
+		if (CONin == 1)
+			if (D == 0)
+				q <= 0;
+			else if (D == 1)
+				q <= 1;
 	end
 
 endmodule

@@ -14,6 +14,7 @@ entity Datapath is
         clear           : in     vl_logic;
         clk             : in     vl_logic;
         read            : in     vl_logic;
+        write           : in     vl_logic;
         PCin            : in     vl_logic;
         IRin            : in     vl_logic;
         MARin           : in     vl_logic;
@@ -42,7 +43,8 @@ entity Datapath is
         NEG             : in     vl_logic;
         \NOT\           : in     vl_logic;
         IncPC           : in     vl_logic;
-        Mdatain         : in     vl_logic_vector(31 downto 0);
+        CONin           : in     vl_logic;
+        CON_FF          : out    vl_logic;
         InPortIn        : in     vl_logic_vector(31 downto 0);
         R0              : out    vl_logic_vector(31 downto 0);
         R1              : out    vl_logic_vector(31 downto 0);
@@ -63,15 +65,22 @@ entity Datapath is
         Hi              : out    vl_logic_vector(31 downto 0);
         Lo              : out    vl_logic_vector(31 downto 0);
         PC              : out    vl_logic_vector(31 downto 0);
-        MDR             : out    vl_logic_vector(31 downto 0);
         bus_mux_out     : out    vl_logic_vector(31 downto 0);
         IR              : out    vl_logic_vector(31 downto 0);
+        MAR             : out    vl_logic_vector(31 downto 0);
         C_sign_ext      : out    vl_logic_vector(31 downto 0);
         InPortOutput    : out    vl_logic_vector(31 downto 0);
         OutPortOut      : out    vl_logic_vector(31 downto 0);
+        Mdatain         : out    vl_logic_vector(31 downto 0);
+        MDR             : out    vl_logic_vector(31 downto 0);
         Z               : out    vl_logic_vector(63 downto 0);
         ALUout          : out    vl_logic_vector(63 downto 0);
         Rins            : out    vl_logic_vector(15 downto 0);
-        Routs           : out    vl_logic_vector(15 downto 0)
+        Routs           : out    vl_logic_vector(15 downto 0);
+        ram_data        : inout  vl_logic_vector(31 downto 0);
+        test1           : out    vl_logic;
+        test2           : out    vl_logic;
+        test3           : out    vl_logic;
+        test4           : out    vl_logic
     );
 end Datapath;

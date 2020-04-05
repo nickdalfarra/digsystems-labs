@@ -34,11 +34,11 @@ vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/alte
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/decoder_2to4.v}
 vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/clocked_dff.v}
 
-vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/p2_datapath_tb.v}
+vlog -vlog01compat -work work +incdir+C:/altera/13.0sp1/digsystems-labs {C:/altera/13.0sp1/digsystems-labs/p2_datapath_br_tb.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  p2_datapath_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiii_ver -L rtl_work -L work -voptargs="+acc"  p2_datapath_br_tb
 
 add wave *
 view structure
 view signals
-run 200 ns
+run 200 ms
